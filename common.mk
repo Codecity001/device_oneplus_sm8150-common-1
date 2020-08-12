@@ -352,6 +352,10 @@ PRODUCT_PACKAGES += \
 # Oneplus cam
 TARGET_SHIPS_OOSCAM := false
 
+# Perf
+PRODUCT_PACKAGES += \
+    libqti-perfd-client
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
