@@ -15,6 +15,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Derp versioning
 DERP_VERSION_APPEND_TIME_OF_DAY := true
 
+# Interfaces
+$(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
+
 # Viper
 $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
