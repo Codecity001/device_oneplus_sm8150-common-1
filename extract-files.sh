@@ -78,6 +78,11 @@ function blob_fixup() {
             ;;
             esac
     ;;
+        vendor/etc/sensors/hals.conf)
+            for shim in $(grep -L "sensors.oneplus.so" "${2}"); do
+                echo "sensors.oneplus.so" >> "$shim"
+            done
+            ;;
     esac
 }
 
