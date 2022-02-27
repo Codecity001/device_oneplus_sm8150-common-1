@@ -372,10 +372,12 @@ vendor/lib64/libc2d30_bltlib.so|adbd12db0fbd7c840b75af49df450833afd9be58
 vendor/lib64/libCB.so|16a3512cc54a8d482a25ae4f598be2a59b919ae5
 vendor/lib64/libgpudataproducer.so|b8adbfd6d03975f821e7b5857d9de0a047afd3be
 vendor/lib64/libgsl.so|b16047039badc627763014839ae6d379987a9779
-vendor/lib64/libllvm-glnext.so|c32e43fad7c41071c736ccc0daf311c3d72e52ef
 vendor/lib64/libllvm-qcom.so|6c19eabb6f1ed256bcc07cfd8596c48b968d4e68
 vendor/lib64/libOpenCL.so|5aecd08fbf5470c2ff467f2e54fb513c592d6272
 vendor/lib64/libVkLayer_q3dtools.so|6986703a4f85589829aa0e60d924621e532a54a6
+
+# Adreno
+vendor/lib64/libllvm-glnext.so
 
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
