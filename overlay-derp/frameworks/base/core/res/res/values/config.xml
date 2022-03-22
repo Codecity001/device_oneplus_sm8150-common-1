@@ -49,4 +49,8 @@
 
     <!-- Defines the custom pickup sensor used by various OEMs like OnePlus-->
     <string name="config_dozePickupSensorType">com.oneplus.sensor.pickup</string>
+
+
+    <!-- NightLight FOD -->
+    <bool name="disable_fod_night_light">true</bool>
 </resources>
