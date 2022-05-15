@@ -247,7 +247,8 @@ PRODUCT_PACKAGES += \
     NcmTetheringOverlay \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
-    OPlusSystemUIResCommon
+    OPlusSystemUIResCommon \
+    SimpleDeviceConfigCommon
 
 # Partitions
 PRODUCT_PACKAGES += \
