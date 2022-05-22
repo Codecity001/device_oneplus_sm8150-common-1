@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 The CyanogenMod project
  *               2017 The LineageOS Project
  *
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.derp.device.DeviceSettings;
+package org.derpfest.device.DeviceSettings;
 
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.content.res.Resources;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
@@ -42,8 +41,8 @@ import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.os.UserHandle;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.os.VibrationEffect;
 import android.provider.Settings;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -72,9 +71,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     private final Vibrator mVibrator;
 
     private final SparseIntArray mActionMapping = new SparseIntArray();
-    private SensorManager mSensorManager;
-    private Sensor mProximitySensor;
-    private WakeLock mProximityWakeLock;
+    private final SensorManager mSensorManager;
+    private final Sensor mProximitySensor;
+    private final WakeLock mProximityWakeLock;
 
     private String mRearCameraId;
     private boolean mTorchEnabled;
@@ -102,7 +101,8 @@ public class TouchKeyHandler implements DeviceKeyHandler {
 
         mPowerManager = context.getSystemService(PowerManager.class);
         mGestureWakeLock = mPowerManager.newWakeLock(
-                PowerManager.PARTIAL_WAKE_LOCK, "TouchscreenGestureWakeLock");
+                PowerManager.PARTIAL_WAKE_LOCK,
+                "DeviceKeyHandler:TouchscreenGestureWakeLock");
 
         mEventHandler = new EventHandler();
 
@@ -111,12 +111,11 @@ public class TouchKeyHandler implements DeviceKeyHandler {
 
         mVibrator = context.getSystemService(Vibrator.class);
 
-        if (mProximitySensor != null) {
-            mSensorManager = context.getSystemService(SensorManager.class);
-            mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-            mProximityWakeLock = mPowerManager.newWakeLock(
-                    PowerManager.PARTIAL_WAKE_LOCK, "TouchscreenGestureProximityWakeLock");
-        }
+        mSensorManager = context.getSystemService(SensorManager.class);
+        mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        mProximityWakeLock = mPowerManager.newWakeLock(
+                PowerManager.PARTIAL_WAKE_LOCK,
+                "DeviceKeyHandler:TouchscreenGestureProximityWakeLock");
         mContext.registerReceiver(mUpdateReceiver,
                 new IntentFilter(Constants.UPDATE_PREFS_ACTION));
     }
@@ -162,7 +161,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     }
 
     private void processEvent(final int action) {
-        mProximityWakeLock.acquire();
+        mProximityWakeLock.acquire(EVENT_PROCESS_WAKELOCK_DURATION);
         mSensorManager.registerListener(new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
@@ -232,9 +231,6 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                     break;
                 case Constants.ACTION_AMBIENT_DISPLAY:
                     launchDozePulse();
-                    break;
-                case Constants.ACTION_WAKE_DEVICE:
-                    wakeDevice();
                     break;
             }
         }
@@ -334,11 +330,6 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
     }
 
-    private void wakeDevice() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-    }
-
     private void dispatchMediaKeyWithWakeLockToMediaSession(final int keycode) {
         final MediaSessionLegacyHelper helper = MediaSessionLegacyHelper.getHelper(mContext);
         if (helper == null) {
@@ -377,7 +368,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
             final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
             if (enabled) {
-                mVibrator.vibrate(VibrationEffect.get(VibrationEffect.EFFECT_HEAVY_CLICK));
+                mVibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_DOUBLE_CLICK));
             }
         }
     }

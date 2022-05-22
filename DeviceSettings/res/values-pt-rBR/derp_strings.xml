@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 DerpFest
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+     Copyright (C) 2022 DerpFest
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -11,11 +15,11 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Panel modes -->
+    <!-- General -->
     <string name="device_title">Definições Oneplus</string>
     <string name="device_summary">Ajustes específicos para dispositivos OnePlus</string>
 
-    <!-- Screen off Gestures : Input -->
+    <!-- Screen off Gestures - Input -->
     <string name="touchscreen_gesture_settings_title">Gestos na Tela</string>
     <string name="touchscreen_gesture_settings_summary">Faça vários gestos na tela para  executar ações rápidas</string>
     <string name="touchscreen_gestures_haptic_feedback_title">Feedback tátil</string>
@@ -29,8 +33,8 @@
     <string name="touchscreen_gesture_single_tap_title">Toque Único</string>
     <string name="touchscreen_gesture_up_arrow_title">Desenhar um \"Λ\"</string>
     <string name="touchscreen_gesture_down_arrow_title">Desenhar um \"V\"</string>
-    <string name="touchscreen_gesture_right_arrow_title">Desenhar um \"&lt;\"</string>
-    <string name="touchscreen_gesture_left_arrow_title">Desenhar um \"&gt;\"</string>
+    <string name="touchscreen_gesture_left_arrow_title">Desenhar um \"&lt;\"</string>
+    <string name="touchscreen_gesture_right_arrow_title">Desenhar um \"&gt;\"</string>
     <string name="touchscreen_gesture_letter_c_title">Desenhar a letra \"C\"</string>
     <string name="touchscreen_gesture_letter_e_title">Desenhar a letra \"e\"</string>
     <string name="touchscreen_gesture_letter_o_title">Desenhar a letra \"O\"</string>
@@ -39,7 +43,7 @@
     <string name="touchscreen_gesture_letter_v_title">Desenhar a letra \"V\"</string>
     <string name="touchscreen_gesture_letter_w_title">Desenhar a letra \"W\"</string>
     <string name="touchscreen_gesture_letter_z_title">Desenhar a letra \"Z\"</string>
-    <!-- Screen off Gestures : Actions -->
+    <!-- Screen off Gestures - Actions -->
     <string name="touchscreen_gesture_action_dialog_title">Ações dos Gestos</string>
     <string name="touchscreen_gesture_action_do_nothing">Fazer nada</string>
     <string name="touchscreen_gesture_action_flashlight">Acender a lanterna</string>
@@ -54,7 +58,6 @@
     <string name="touchscreen_gesture_action_volume_down">Abaixar volume da mídia</string>
     <string name="touchscreen_gesture_action_volume_up">Aumentar volume da mídia</string>
     <string name="touchscreen_gesture_action_ambient_display">Exibir tela ambiente</string>
-    <string name="touchscreen_gesture_action_wake_device">Acordar Dispositivo</string>
 
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Slider de notificação</string>
@@ -68,16 +71,4 @@
     <string name="notification_slider_mode_vibrate">Vibrar</string>
     <string name="notification_slider_mode_none">Normal</string>
     <string name="buttons_dashboard_summary">Definições do Slider de Notificação</string>
-
-    <!-- Vibration slider -->
-    <string name="category_vibrator">Vibração</string>
-    <string name="vib_strength_title_head">Intensidade</string>
-    <string name="vib_strength_summary_head">Defina a intensidade de vibração do seu dispositivo</string>
-    <string name="vibration_warning">Definir uma intensidade muito forte pode causar defeitos ao seu hardware</string>
-
-    <!-- Camera intent -->
-    <string name="camera_title">Câmera</string>
-    <string name="always_on_camera_dialog_title">Diálogo da câmera frontal</string>
-    <string name="always_on_camera_dialog_summary_on">Sempre pergunte antes de abrir</string>
-    <string name="always_on_camera_dialog_summary_off">Somente pergunte quando a tela estiver desligada</string>
 </resources>

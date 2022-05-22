@@ -14,7 +14,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.system"
-          package="com.derp.device.DeviceSettings"
+          package="org.derpfest.device.DeviceSettings"
           android:versionCode="1"
           android:versionName="1.0" >
 
@@ -22,32 +22,21 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
-    <protected-broadcast android:name="com.derp.device.DeviceSettings.UPDATE_SETTINGS" />
+    <protected-broadcast android:name="org.derpfest.device.DeviceSettings.UPDATE_SETTINGS" />
 
-    <protected-broadcast android:name="com.derp.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
-
-    <uses-sdk
-        android:minSdkVersion="28"
-        android:targetSdkVersion="30" />
+    <protected-broadcast android:name="org.derpfest.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
     <application
         android:icon="@drawable/ic_settings_device"
-        android:label="@string/device_title">
-
-        <receiver android:name="com.derp.device.DeviceSettings.Startup" android:exported="true">
-            <intent-filter android:priority="1000" >
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+        android:label="@string/device_title"
+        android:theme="@style/Theme.SubSettingsBase">
 
         <!-- Device Settings -->
         <activity
             android:name=".DeviceSettingsActivity"
             android:label="@string/device_title"
-            android:exported="true"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -68,16 +57,26 @@
         <activity android:name=".KeyHandler" />
 
         <activity
-            android:name=".TouchscreenGestureSettings"
-            android:label="@string/touchscreen_gesture_settings_title"
+            android:name=".TouchscreenGestureActivity"
             android:exported="true"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:label="@string/touchscreen_gesture_settings_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
+        <receiver android:name="org.derpfest.device.DeviceSettings.Startup"
+                  android:exported="false">
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="com.derp.device"
+            android:authorities="org.derpfest.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"

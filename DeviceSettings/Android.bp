@@ -1,7 +1,7 @@
 //
 // Copyright (C) 2013 The CyanogenMod Project
 // Copyright (C) 2017 The LineageOS Project
-// Copyright (C) 2021 DerpFest
+// Copyright (C) 2022 DerpFest
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,7 +33,6 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "org.lineageos.settings.resources",
-        "VendorSupport-preference",
     ],
 
     resource_dirs: ["res"],
@@ -41,5 +40,4 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
-
 }
