@@ -36,9 +36,12 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
-KERNEL_DEFCONFIG := vendor/sm8150-perf_defconfig
+KERNEL_DEFCONFIG := neptune_defconfig
+TARGET_KERNEL_SOURCE := kernel/msm-4.14
 KERNEL_LLVM_SUPPORT := true
 KERNEL_CUSTOM_LLVM := true
+KERNEL_CUSTOM_LLVM_PATH := $(shell pwd)/prebuilts/clang-standalone
+KERNEL_LLVM_BIN := $(shell pwd)/prebuilts/clang-standalone/bin
 
 # A/B
 AB_OTA_UPDATER := true
