@@ -190,6 +190,19 @@ vendor.display.enable_optimize_refresh=1
 vendor.gralloc.disable_ubwc=0
 ro.surface_flinger.enable_frame_rate_override=false
 
+# Dolby
+ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1
+
+# Dolby & Audio Miui Props
+ro.audio.monitorRotation=true
+ro.vendor.audio.dolby.dax.support=true
+persist.vendor.audio.delta.refresh=true
+ro.vendor.audio.dolby.surround.enable=true
+
+# MiSound
+persist.vendor.audio.misound.disable=true
+ro.vendor.audio.misound.bluetooth.enable=true
+
 # DPM
 persist.vendor.dpmhalservice.enable=1
 
