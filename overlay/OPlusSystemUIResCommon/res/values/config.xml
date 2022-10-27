@@ -17,4 +17,8 @@
 
      <!-- Whether to show a alarm dialog when device's usb port is overheating. -->
      <integer name="config_showUsbPortAlarm">1</integer>
+    
+     <!-- Charging info current divider, if needed -->
+     <integer name="config_currentInfoDivider" translatable="false">1</integer>
+
 </resources>
