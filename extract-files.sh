@@ -71,6 +71,9 @@ function blob_fixup() {
                 echo "sensors.oneplus.so" >> "$shim"
             done
             ;;
+        vendor/lib64/hw/camera.qcom.so )
+            grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
+            ;;
     esac
 }
 
