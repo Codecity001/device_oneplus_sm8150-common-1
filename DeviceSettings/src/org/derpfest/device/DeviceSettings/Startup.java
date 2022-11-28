@@ -24,6 +24,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
+import org.derpfest.device.DeviceSettings.TouchscreenGestureFragment;
+
 public class Startup extends BroadcastReceiver {
 
     private void restore(String file, boolean enabled) {

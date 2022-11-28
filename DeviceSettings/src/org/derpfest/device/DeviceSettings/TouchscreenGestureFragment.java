@@ -23,9 +23,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.view.MenuItem;
-
-import android.preference.PreferenceActivity;
 import android.provider.Settings;
 
 import androidx.preference.ListPreference;
@@ -51,7 +48,6 @@ public class TouchscreenGestureFragment extends PreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-
         setPreferencesFromResource(R.xml.touchscreen_gesture_settings, rootKey);
 
         if (isTouchscreenGesturesSupported(getContext())) {
@@ -96,7 +92,6 @@ public class TouchscreenGestureFragment extends PreferenceFragment {
             setEntryValues(R.array.touchscreen_gesture_action_values);
             setDefaultValue(String.valueOf(defaultAction));
 
-            setIconSpaceReserved(false);
             setSummary("%s");
             setDialogTitle(R.string.touchscreen_gesture_action_dialog_title);
             setTitle(Utils.getLocalizedString(
