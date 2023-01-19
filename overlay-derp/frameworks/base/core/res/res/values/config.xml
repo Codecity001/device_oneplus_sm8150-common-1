@@ -64,4 +64,7 @@
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
     <bool name="config_proximityCheckOnWake">true</bool>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
+    <!-- Display color inversion availability -->
+    <bool name="config_displayInversionAvailable">false</bool>
 </resources>
