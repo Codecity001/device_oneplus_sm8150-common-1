@@ -19,6 +19,10 @@ $(call inherit-product, device/qcom/common/vendor/adreno-6xx-legacy/qti-adreno-6
 $(call inherit-product, device/qcom/common/vendor/media-legacy/qti-media-legacy.mk)
 $(call inherit-product, device/qcom/common/system/av/qti-av.mk)
 
+# Get Perf aspects
+$(call inherit-product, device/qcom/common/system/perf/qti-perf.mk)
+$(call inherit-product, device/qcom/common/vendor/perf-legacy/qti-perf-legacy.mk)
+
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
