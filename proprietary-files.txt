@@ -531,10 +531,7 @@ vendor/lib/libsmwrapper.so
 
 # Media
 system_ext/lib/libmmosal.so
-system_ext/lib/libmmparser_lite.so
 system_ext/lib64/libmmosal.so
-vendor/bin/hw/vendor.qti.media.c2@1.0-service
-vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/seccomp_policy/codec2.vendor.base.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext.policy
 vendor/etc/system_properties.xml
@@ -964,7 +961,6 @@ system_ext/lib/libwfduibcsinkinterface.so|5aa2ec3238a1c982fb9c40cd4443dd86343345
 system_ext/lib/libwfduibcsrc.so|b269c1b9ef1636875b8a16f0bafdb69f38c039aa
 system_ext/lib/libwfduibcsrcinterface.so|a26c4ce864a63f9875f620b969146da412e8dee2
 system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|db7b55eb78b6f90ac50e39435fa75b878c21ffea
-system_ext/lib64/libmmparser_lite.so|e1a76ee05ddc62ddfd554aac680fdb94f26994dd
 system_ext/lib64/libmmrtpdecoder.so|5affca38a9361d131a86af63c842807097f9a292
 system_ext/lib64/libmmrtpencoder.so|ed98e847430e34aaf2d31ed9cef1275acad405fd
 system_ext/lib64/libwfdclient.so|6d4f7be9b83031ae4a33675e9f9fd04e99c6d44c
