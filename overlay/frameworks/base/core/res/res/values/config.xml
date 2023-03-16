@@ -448,4 +448,6 @@
     <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
      <string name="config_dozeDoubleTapSensorType" translatable="false">org.derp.sensor.double_tap</string>
 
+    <!-- Auto-brightness sensor type string -->
+    <string name="config_displayLightSensorType">"android.sensor.light"</string>
 </resources>
