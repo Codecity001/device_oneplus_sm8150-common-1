@@ -354,8 +354,7 @@ TARGET_SHIPS_OOSCAM := false
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    vendor.qti.hardware.perf@2.2.vendor:64
+    android.hardware.power-service-qti
 
 # QMI
 PRODUCT_PACKAGES += \
