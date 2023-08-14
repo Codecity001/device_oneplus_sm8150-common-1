@@ -204,6 +204,7 @@ ro.telephony.default_network=22,22
 
 # Sensors
 persist.vendor.sensors.debug.hal=0
+vendor.sensor.hal.pickup=android.sensor.tilt_detector
 
 # USB
 vendor.usb.controller=a600000.dwc3
