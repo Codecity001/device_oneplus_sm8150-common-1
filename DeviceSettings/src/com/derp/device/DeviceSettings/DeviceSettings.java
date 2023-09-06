@@ -17,12 +17,6 @@
 */
 package com.derp.device.DeviceSettings;
 
-import static com.android.internal.util.derp.AutoSettingConsts.MODE_DISABLED;
-import static com.android.internal.util.derp.AutoSettingConsts.MODE_NIGHT;
-import static com.android.internal.util.derp.AutoSettingConsts.MODE_TIME;
-import static com.android.internal.util.derp.AutoSettingConsts.MODE_MIXED_SUNSET;
-import static com.android.internal.util.derp.AutoSettingConsts.MODE_MIXED_SUNRISE;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -60,15 +54,12 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String POPUP_HELPER_PKG_NAME = "org.lineageos.camerahelper";
 
-    private static final String DC_SCHEDULE_KEY = "dc_schedule";
-
     private TwoStatePreference mDCModeSwitch;
     private TwoStatePreference mHBMModeSwitch;
     private TwoStatePreference mRefreshRate;
     private SwitchPreference mFpsInfo;
     private SwitchPreference mAlwaysCameraSwitch;
     private SwitchPreference mMuteMediaSwitch;
-    private Preference mDCSchedulePref;
     private ListPreference mReadingMode;
 
     private boolean mInternalFpsStart = false;
@@ -184,9 +175,6 @@ public class DeviceSettings extends PreferenceFragment implements
             mCameraCategory.setVisible(false);
         }
 
-        mDCSchedulePref = findPreference(DC_SCHEDULE_KEY);
-        updateDCScheduleSummary();
-
         // Registering observers
         final SharedPreferences prefs = Constants.getDESharedPrefs(getContext());
         prefs.registerOnSharedPreferenceChangeListener(this);
@@ -204,7 +192,6 @@ public class DeviceSettings extends PreferenceFragment implements
         super.onResume();
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled());
         mFpsInfo.setChecked(isFPSOverlayRunning());
-        updateDCScheduleSummary();
     }
 
     @Override
@@ -271,29 +258,5 @@ public class DeviceSettings extends PreferenceFragment implements
     private boolean isFPSOverlayRunning() {
         final SharedPreferences prefs = Constants.getDESharedPrefs(getContext());
         return prefs.getBoolean(FPSInfoService.PREF_KEY_FPS_STATE, false);
-    }
-
-    private void updateDCScheduleSummary() {
-        if (mDCSchedulePref == null) return;
-        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
-                Settings.Secure.DC_DIM_AUTO_MODE, 0, UserHandle.USER_CURRENT);
-        switch (mode) {
-            default:
-            case MODE_DISABLED:
-                mDCSchedulePref.setSummary(R.string.disabled);
-                break;
-            case MODE_NIGHT:
-                mDCSchedulePref.setSummary(R.string.dc_schedule_twilight);
-                break;
-            case MODE_TIME:
-                mDCSchedulePref.setSummary(R.string.dc_schedule_custom);
-                break;
-            case MODE_MIXED_SUNSET:
-                mDCSchedulePref.setSummary(R.string.dc_schedule_mixed_sunset);
-                break;
-            case MODE_MIXED_SUNRISE:
-                mDCSchedulePref.setSummary(R.string.dc_schedule_mixed_sunrise);
-                break;
-        }
     }
 }
