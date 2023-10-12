@@ -127,6 +127,9 @@ TARGET_USES_ION := true
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msmnile
 
+# Disable sparse for ext images
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
