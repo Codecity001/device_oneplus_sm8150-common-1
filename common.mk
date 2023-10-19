@@ -381,10 +381,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqti-perfd-client
 
-#Protobuf compat
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
-
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
@@ -398,6 +394,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2 \
     android.hardware.radio.deprecated@1.0 \
     libprotobuf-cpp-full \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
     libril_shim \
     librmnetctl \
     libxml2
