@@ -1,0 +1,2 @@
+# Google WirelessCharger
+vendor.google.wireless_charger::IWirelessCharger                                                    u:object_r:hal_wlc_hwservice:s0
