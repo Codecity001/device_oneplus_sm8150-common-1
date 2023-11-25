@@ -26,6 +26,11 @@ TARGET_COMMON_QTI_COMPONENTS := \
     media \
     av
 
+# Inherit device/qcom/common, QCOM core-utils and exclude QCOM SEPolicy
+TARGET_EXCLUDE_QCOM_SEPOLICY := true
+$(call inherit-product, device/qcom/common/common.mk)
+include vendor/qcom/opensource/core-utils/build/utils.mk
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
