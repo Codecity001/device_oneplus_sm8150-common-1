@@ -18,6 +18,9 @@ $(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Derp versioning
+DERP_VERSION_APPEND_TIME_OF_DAY := true
+
 # Get Qcom components
 TARGET_EXCLUDE_QCOM_SEPOLICY := true
 TARGET_BOARD_PLATFORM := msmnile
