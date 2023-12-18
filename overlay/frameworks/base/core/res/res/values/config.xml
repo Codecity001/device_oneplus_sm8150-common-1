@@ -472,7 +472,7 @@
      <integer name="config_udfps_illumination_transition_ms">0</integer>
 
     <!-- Maximum strength, in percentage, supported by bright color reduction. -->
-    <integer name="config_reduceBrightColorsStrengthMax">120</integer>
+    <integer name="config_reduceBrightColorsStrengthMax">80</integer>
 
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.derp.sensor.udfps</string>
