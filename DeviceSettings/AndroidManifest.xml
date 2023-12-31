@@ -63,13 +63,6 @@
             android:exported="false">
         </activity>
 
-        <activity
-            android:name=".DCDimScheduleSettings"
-            android:label="@string/dc_schedule_title"
-            android:theme="@style/Theme.SubSettingsBase"
-            android:exported="false">
-        </activity>
-
         <receiver
             android:name="com.derp.device.DeviceSettings.Startup"
             android:directBootAware="true"
