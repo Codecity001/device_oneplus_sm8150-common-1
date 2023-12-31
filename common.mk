@@ -249,6 +249,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml
 
+PRODUCT_PACKAGES += \
+    libstagefright_foundation-v33
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
