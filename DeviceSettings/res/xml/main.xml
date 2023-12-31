@@ -24,8 +24,8 @@
         android:title="@string/dc_schedule_title"
         android:persistent="false" >
         <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.yaap.device.DeviceSettings"
-                android:targetClass="com.yaap.device.DeviceSettings.DCDimScheduleSettings" />
+                android:targetPackage="com.derp.device.DeviceSettings"
+                android:targetClass="com.derp.device.DeviceSettings.DCDimScheduleSettings" />
     </Preference>
 
     <SwitchPreferenceCompat
@@ -60,8 +60,8 @@
         android:summary="@string/touchscreen_gesture_settings_summary"
         android:persistent="false" >
         <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.yaap.device.DeviceSettings"
-                android:targetClass="com.yaap.device.DeviceSettings.TouchscreenGestureSettings" />
+                android:targetPackage="com.derp.device.DeviceSettings"
+                android:targetClass="com.derp.device.DeviceSettings.TouchscreenGestureSettings" />
     </Preference>
 
     <PreferenceCategory
