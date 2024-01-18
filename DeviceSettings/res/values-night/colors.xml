@@ -5,6 +5,5 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Alert Slider -->
-    <color name="alert_slider_notification_background">@android:color/system_accent2_100</color>
-    <color name="alert_slider_icon_color">#FFFFFFFF</color>
+    <color name="alert_slider_notification_background">@android:color/system_accent2_700</color>
 </resources>
