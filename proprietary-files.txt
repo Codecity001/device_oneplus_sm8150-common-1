@@ -57,9 +57,6 @@ odm/firmware/tfa98xx.cnt
 odm/lib/libaudioEngineerTest.so
 vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib/liba2dpoffload.so:odm/lib/liba2dpoffload.so;MODULE_SUFFIX=_odm
 vendor/lib/libacdb-fts.so
@@ -77,6 +74,11 @@ vendor/lib/libqtigef.so
 vendor/lib/libssrec.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib64/libadsprpc.so
+
+# Audio FX modules - from qssi-user-14-UKQ1.230924.001-1702916091049-release-keys
+vendor/lib64/soundfx/libqcbassboost.so|e655270002aef6e9eb79774b16d2cda408fc3be8
+vendor/lib64/soundfx/libqcreverb.so|6365400f47e7a1f56f902884993963acd567bbdf
+vendor/lib64/soundfx/libqcvirt.so|e2cd59853b16a7d11739472085b07e90771a6dbe
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
