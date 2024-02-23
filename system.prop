@@ -24,6 +24,11 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
+# Camera
+persist.vendor.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oppo.engineermode,com.oplus.camera
+persist.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oppo.engineermode,com.oplus.camera
+vendor.camera.algo.jpeghwencode=0
+
 # CNE
 persist.vendor.cne.feature=1
 
