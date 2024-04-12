@@ -217,6 +217,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml
 
+# Use mimalloc allocator instead of jemalloc
+PRODUCT_USE_MIMALLOC := true
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
