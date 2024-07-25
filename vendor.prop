@@ -138,6 +138,10 @@ drm.service.enabled=true
 # Fingerprint
 persist.vendor.qfp=true
 
+# Fling velocities
+ro.min.fling_velocity=140
+ro.max.fling_velocity=20000
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
