@@ -140,6 +140,10 @@ persist.vendor.qfp=true
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Fling velocities
+ro.min.fling_velocity=140
+ro.max.fling_velocity=20000
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
