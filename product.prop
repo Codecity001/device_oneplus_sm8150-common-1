@@ -1,5 +1,8 @@
 # Audio
 af.fast_track_multiplier=1
 
-# eBPF
+# BPF
 ro.bpf.kver_override=5.4.299
+
+# Display
+ro.surface_flinger.has_wide_color_display=true
