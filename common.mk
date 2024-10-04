@@ -289,7 +289,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     vendor.lineage.oplus_als.service \
-    android.hardware.sensors@2.1-service.oneplus_msmnile \
+    android.hardware.sensors-service.oplus-multihal \
     sensors.oplus
 
 PRODUCT_COPY_FILES += \
