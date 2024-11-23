@@ -27,7 +27,7 @@ android_app {
     system_ext_specific: true,
     privileged: true,
 
-    libs: ["SystemUIPluginLib"],
+    libs: ["SystemUIPluginLib","framework-derpfest"],
     static_libs: [
         "org.lineageos.settings.resources",
     ],
