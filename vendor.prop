@@ -244,6 +244,7 @@ persist.sys.oem.otg_support=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+vendor.perf.framepacing.enable=1
 
 # Radio
 persist.vendor.radio.apm_sim_not_pwdn=1
