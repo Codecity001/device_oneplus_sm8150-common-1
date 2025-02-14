@@ -1,1 +1,4 @@
 allow system_app zygote:unix_stream_socket getopt;
+binder_call(system_app, hal_audio_default)
+binder_call(system_app, hal_bootctl_default)
+binder_call(system_app, hal_health_default)
