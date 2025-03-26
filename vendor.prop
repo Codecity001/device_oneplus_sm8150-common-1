@@ -184,6 +184,9 @@ vendor.media.omx=0
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
 
+# OTG
+persist.sys.oem.otg_support=true
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
