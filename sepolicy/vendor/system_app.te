@@ -1,4 +1,6 @@
 allow system_app zygote:unix_stream_socket getopt;
+allow system_app vendor_sysfs_battery_supply:dir search;
+allow system_app vendor_sysfs_battery_supply:file rw_file_perms;
 binder_call(system_app, hal_audio_default)
 binder_call(system_app, hal_bootctl_default)
 binder_call(system_app, hal_health_default)
