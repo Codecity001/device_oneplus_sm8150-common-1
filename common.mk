@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
 
 # Dolby
 PRODUCT_PACKAGES += \
-    XiaomiDolby
+    OplusDolby
 
 # Doze
 PRODUCT_PACKAGES += \
