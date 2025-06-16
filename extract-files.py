@@ -48,6 +48,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libshims_fingerprint.oplus.so'),
     'odm/etc/vintf/manifest/manifest_oplus_fingerprint.xml': blob_fixup()
         .patch_file('blob-patches/manifest_oplus_fingerprint.patch'),
+    ('odm/lib/liba2dpoffload.so', 'odm/lib/libaudioEngineerTest.so', 'vendor/lib/hw/sound_trigger.primary.msmnile.so', 'vendor/lib/libhdmipassthru.so', 'vendor/lib/libssrec.so'): blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     ('odm/lib64/mediadrm/libwvdrmengine.so', 'odm/lib64/libwvhidl.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
     ('odm/lib64/libarcsoft_dualcam_refocus_preview.so', 'vendor/lib64/libarcsoft_super_night_raw.so'): blob_fixup()

@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libaudioroute \
+    libaudioroute-v34 \
     libbatterylistener \
     libhdmiedid \
     libexthwplugin \
