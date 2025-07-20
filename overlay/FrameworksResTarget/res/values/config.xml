@@ -102,7 +102,4 @@
 
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
-
-    <!-- Album art max bitmap size -->
-    <integer name="config_maxBitmapSizePx">640</integer>
 </resources>
