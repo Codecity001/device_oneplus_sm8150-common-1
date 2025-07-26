@@ -1,1 +1,2 @@
 allow vendor_netmgrd self:capability sys_module;
+dontaudit vendor_netmgrd vendor_diag_device:chr_file rw_file_perms;

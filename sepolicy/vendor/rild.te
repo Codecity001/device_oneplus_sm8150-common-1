@@ -1,2 +1,3 @@
 dontaudit rild cache_file:lnk_file r_file_perms;
 dontaudit rild default_prop:file r_file_perms;
+dontaudit rild vendor_diag_device:chr_file rw_file_perms;
