@@ -1,1 +1,2 @@
 dontaudit hal_audio_default default_prop:file r_file_perms;
+dontaudit hal_audio_default vendor_diag_device:chr_file rw_file_perms;
