@@ -1,0 +1,2 @@
+# Allow binder calls from memtrack hal to system app
+binder_call(hal_memtrack_default, system_app)
