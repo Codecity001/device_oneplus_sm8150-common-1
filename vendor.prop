@@ -1,3 +1,7 @@
+# App launch prefetching (IORapd)
+iorapd.perfetto.enable=false
+iorapd.readahead.enable=false
+
 # Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
