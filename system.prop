@@ -1,3 +1,7 @@
+# App launch prefetching (IORapd)
+ro.iorapd.enable=false
+persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+
 # Bluetooth
 bluetooth.afh.min_good_channels=20
 bluetooth.channel_quality_monitoring=1
