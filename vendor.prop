@@ -272,7 +272,6 @@ persist.sys.perf.scroll_opt.heavy_app=1
 persist.vendor.sensors.debug.hal=0
 
 # USB
-sys.usb.mtp.batchcancel=1
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.qdss.inst.name=qdss
