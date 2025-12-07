@@ -240,6 +240,7 @@ ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=15
 
 # Media
+debug.sdm.support_writeback=0
 debug.stagefright.c2inputsurface=-1
 vendor.media.omx=0
 
