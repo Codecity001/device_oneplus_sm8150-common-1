@@ -1,6 +1,9 @@
 # Audio
 af.fast_track_multiplier=1
 
+# Bluetooth
+bluetooth.auto_connect_profiles.enabled=true
+
 # eBPF
 ro.bpf.kver_override=5.10.239
 
