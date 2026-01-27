@@ -46,6 +46,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndmonitor \
     libspkrprot \
+    libtinyalsa \
     libtinycompress \
     libvolumelistener \
     tinymix
