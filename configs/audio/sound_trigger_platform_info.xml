@@ -397,5 +397,7 @@
     <!-- Default value is assumed for devices that are not listed here -->
     <backend_type>
         <param DEVICE_HANDSET_MIC_ECPP_CPE="BACKEND_ECPP" />
+        <param DEVICE_HANDSET_DMIC_CPE="BACKEND_DEFAULT" />
+        <param DEVICE_HANDSET_DMIC_APE="BACKEND_DEFAULT" />
     </backend_type>
 </sound_trigger_platform_info>
