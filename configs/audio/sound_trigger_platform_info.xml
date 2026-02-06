@@ -115,7 +115,7 @@
             <param sm_id="0x2" />
             <param module_lib="libcapiv2svacnn.so"/>
             <param sample_rate="16000"/>
-            <param bit_wdith="16"/>
+            <param bit_width="16"/>
             <param channel_count="1"/>
             <!--   modified by fred.li for SVA4.0 OEM Feature for bug QOOS-5185-->
             <!-- OP_FEATURE_MM_SVA-->
@@ -127,7 +127,7 @@
             <param sm_id="0x4" />
             <param module_lib="libcapiv2vop.so"/>
             <param sample_rate="16000"/>
-            <param bit_wdith="16"/>
+            <param bit_width="16"/>
             <param channel_count="1"/>
         </arm_ss_usecase>
         <gcs_usecase>
