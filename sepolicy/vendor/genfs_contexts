@@ -1,2 +1,5 @@
 # Motor
 genfscon sysfs /class/motor    u:object_r:sysfs_motor:s0
+
+# WDSP (WCD9340 Codec DSP)
+genfscon sysfs /kernel/wdsp0 u:object_r:vendor_sysfs_audio:s0
