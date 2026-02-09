@@ -77,6 +77,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/wfdconfig.xml': blob_fixup()
         .regex_replace('<AudioStreamInSuspend>0</AudioStreamInSuspend>', '<AudioStreamInSuspend>1</AudioStreamInSuspend>')
         .regex_replace('<HID>0</HID>', '<HID>1</HID>'),
+    'vendor/lib/hw/sound_trigger.primary.msmnile.so': blob_fixup()
+        .binary_regex_replace(b'/vendor/lib/hw\x00', b'/odm/lib/hw\x00\x00\x00\x00'),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
         .add_needed('libcamera_metadata_shim.so'),
     ('vendor/lib64/libdlbdsservice.so', 'vendor/lib/libstagefright_soft_ac4dec.so', 'vendor/lib/libstagefright_soft_ddpdec.so'): blob_fixup()
