@@ -114,7 +114,6 @@ odm/lib64/libarcsoft_dualcam_refocus_uw.so
 odm/lib64/libormshalclient.so
 odm/lib64/libvl53l1_daemon.so
 odm/lib64/sensors.hal.tof.so
-vendor/bin/hw/vendor.oplus.hardware.cameraMDM@2.0-service
 vendor/etc/camera/ashdr/iso617_4608x3456.ncf
 vendor/etc/camera/ashdr/ncf_pack.ncf
 vendor/etc/camera/ashdr/ncf_pack_imx371.ncf
@@ -135,8 +134,6 @@ vendor/etc/camera/goldResult_7T_uw.bin
 vendor/etc/camera/goldResult_7T_wt.bin
 vendor/etc/camera/goldResult_7Tpro_uw.bin
 vendor/etc/camera/goldResult_7Tpro_wt.bin
-vendor/etc/init/vendor.oplus.hardware.cameraMDM@2.0-service.rc
-vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml
 vendor/lib64/camera/components/com.oneplus.node.bokeh.so
 vendor/lib64/camera/components/com.oneplus.node.distortion.so
 vendor/lib64/camera/components/com.oneplus.node.eis.so
@@ -219,8 +216,73 @@ vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libtriplecam_optical_zoom_control.so
 vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libvidhance.so
-vendor/lib64/vendor.oplus.hardware.cameraMDM@2.0.so
 vendor/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
+
+# Camera - VPP and bokeh vendor blobs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
+vendor/lib/libvppimmotion.so|f802f0ecb32605371cb3839986f3a97a5c52fdf9
+vendor/lib64/libstblur_capture_api.so|ce37efca2ce8fcf5b4173b81b2d22b8be4e260f0
+vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
+
+# Camera - OnePlus Camera APKs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
+-product/priv-app/OnePlusCamera/OnePlusCamera.apk|3324acd1a2ab243a70aea1c0721af2b490d9bfa8
+-product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so|4659105d1ca963ddfab1560e21009107b8cc520d
+-product/priv-app/OnePlusCameraService/OnePlusCameraService.apk|88c1fc5e5c88540b2fb92e363eefbc824de53edb
+-product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
+
+# Camera - OnePlus Camera default permissions
+-product/etc/default-permissions/com.oneplus.camera.xml|3e6eb287fec6ad1d5323938e3359b033394a71ef
+
+# Camera - OnePlus Camera permissions
+-product/etc/permissions/com.oneplus.camera.xml|da761de1ed440e590482c1210ae9879744b847e4
+-product/etc/permissions/com.oneplus.camera.service.xml|7ebd97a42322a77dde06e79120af99aaf74ddb6f
+
+# Camera - OnePlus Camera product JNI libs
+-product/lib64/libAncFilter_jni.so|aba596037f5eb9c6ffaa4494f98a0e017b9dc87e
+-product/lib64/libAncHumanDoubleExposure-jni.so|7fb9b281ef0f3221b3d6ffaf62e88f69f0c348b2
+-product/lib64/libAncHumanRetain-jni_v2.so|7c0e466c1f5565ac652698c4ac10c2ff1ffb9ce1
+-product/lib64/libAncHumanSegFigureFusion-jni.so|595d48a68ed1ab3b0a29fe89a177e9a7711dd08f
+-product/lib64/libAncHumanVideo-jni.so|68d42af9383b4f207a9bf52c51cf28ca763eebbb
+-product/lib64/libAncHumBokeh-jni.so|a25ea269fbacb802e6b9648317ac68de007b97ab
+-product/lib64/libAPSClient-cmd-jni.so|6a7ecb43e00ff325f548aa0992ffcb2d77a5f48e
+-product/lib64/libAPSClient-jni.so|43516783f1481f14d3592a09ecdb8d3875a495dc
+-product/lib64/libApsFaceBeautyPreviewProductJni.so|b95014d6dca8159560cc39c7748369e5c2b7a647
+-product/lib64/libextendfile.so|d3280355491c6e6b260c59a72914a7efa500ae62
+-product/lib64/libFileExtender-jni.so|06e1d883e22d91c84afd7589ae4504cc6819be22
+-product/lib64/libjnisingleblur_api.so|a4b40043aab548e0f32b22b10035c7ac8c879ab9
+-product/lib64/libjnistblur_api.so|47e94bcb50f0da7b94e26c4c3fb851bb82351f28
+-product/lib64/libmpbase.so|c8c9a6a8b6cc049e65cf13f9d8fdca3c636c7c5d
+-product/lib64/libOplusBlurPreviewJNI.so|ac7569de4ee14f002d5917f54b9b55bd7596a558
+-product/lib64/liboplusCode.so|002c8e8b2845c90754cfb368efdd9dd51f27f733
+-product/lib64/libsingle_camera_bokeh_native.so|84c9553528607ad81baccee6bb9b260038829554
+-product/lib64/libSuperTextWrapper.so|61642d2f279361986ef1e54ab18917c61318853b
+-product/lib64/libXDocProcessSDK-jni.so|42a1a638ed0e6202ad01a0bab153f44ecee7b089
+-product/lib64/libXDocProcessSDK.so|a63b634ac75f3c9009939114c5caf6124615cd66
+-product/lib64/libYTCommon.so|97f64f7c69355e80e81e9f3f0ceb11fd9b9be650
+
+# Camera - system_ext HIDL stubs
+-system_ext/lib/EngCameraClient.so|16aeafe0094986204f1372172c3fc67b2751b61b
+-system_ext/lib/libjnistblur_api.qti.so|fc4910eb1b4bd079310ee83270d0b0e234266c13
+-system_ext/lib/vendor.oplus.hardware.cameraMDM@1.0.so|21a36ebc25d5f95baa9707e3e7710238c2cf88d0
+-system_ext/lib/vendor.oplus.hardware.cameraMDM@2.0.so|eaa0fba5b9f773f6b3e2724381c35e766ce36902
+-system_ext/lib/vendor.oplus.hardware.engcamera@1.0.so|23178c54329f02a5d18484d62ecc992a2047e2b4
+-system_ext/lib64/EngCameraClient.so|570e34cccfc65ca61340db70694355bf1f86d446
+-system_ext/lib64/libjnistblur_api.qti.so|f83759dba7eb3cdf8add8228e91e2feab0164363
+-system_ext/lib64/libOplusSloganClient.so|f06b1e6411ee49997dc4d63016b589dc0f112dec
+-system_ext/lib64/libSloganJni.oplus.so|949c1b34d14f8dd2312f2336f2bb4824c088ea51
+-system_ext/lib64/vendor.oplus.hardware.cameraMDM@1.0.so|f3f829247900e47949b0edb3ac6de6ab83c07603
+-system_ext/lib64/vendor.oplus.hardware.cameraMDM@2.0.so|8889bc6d05accbd05c68f173d3d2c28653c6d531
+-system_ext/lib64/vendor.oplus.hardware.camera.slogan@1.0.so|65af5b36c5f6fd615b68c9803b581c6546bcd932
+-system_ext/lib64/vendor.oplus.hardware.engcamera@1.0.so|0fa6e9c86160916707772165305f521fcbdf529e
+
+# Camera - cameraMDM HIDL service
+vendor/bin/hw/vendor.oplus.hardware.cameraMDM@2.0-service|10fd0d1d8c91b70b7145db5fbbf1155a7a4b7093
+vendor/etc/init/vendor.oplus.hardware.cameraMDM@2.0-service.rc|8a8554aab6df0966ca70eb02476a263f2862a6e2
+vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml|2ec7e6b9cf5c4bca91bd8e875d32fc182a221d42
+vendor/lib64/vendor.oplus.hardware.cameraMDM@2.0.so|dce39a825a83fe264c4b4d5aef85b04094d94736
+
+# Camera - system cammidasservice client libs
+-system/lib/vendor.oplus.hardware.cammidasservice@1.0.so|2e6a272e752ca7888fc48aceff2fe923d32c4c03
+-system/lib64/vendor.oplus.hardware.cammidasservice@1.0.so|0df7c75f2db3fdac9734ac6159185a62e3260138
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
