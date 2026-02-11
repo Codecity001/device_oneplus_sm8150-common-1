@@ -101,6 +101,8 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    OnePlusCamera \
+    OnePlusCameraService \
     vendor.oplus.hardware.performance-service
 
 PRODUCT_COPY_FILES += \
@@ -112,6 +114,7 @@ PRODUCT_COPY_FILES += \
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
 
 $(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.opsm8150)
+$(call soong_config_set,camera,package_name,com.oplus.is.sdk.camera.package)
 
 # Configstore
 PRODUCT_PACKAGES += \
