@@ -114,7 +114,8 @@ def add_custom_modules(ctx, packages_ctx):
     ctx.bp_out.write(Path(__file__).with_name('proprietary-files.bp.in').read_text())
     ctx.product_mk_out.write(
         '\nPRODUCT_PACKAGES += \\\n'
-        '    libaudiohal@6.0\n'
+        '    libaudiohal@6.0 \\\n'
+        '    prebuilt_libCameraMDMHelper@2.0\n'
     )
 
 
