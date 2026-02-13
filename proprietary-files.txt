@@ -224,7 +224,7 @@ vendor/lib64/libstblur_capture_api.so|ce37efca2ce8fcf5b4173b81b2d22b8be4e260f0
 vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 
 # Camera - OnePlus Camera APKs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
--product/priv-app/OnePlusCamera/OnePlusCamera.apk|3324acd1a2ab243a70aea1c0721af2b490d9bfa8
+-product/priv-app/OnePlusCamera/OnePlusCamera.apk|6607efe44720594916d513572818dcfe5c4d31b8
 -product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so|4659105d1ca963ddfab1560e21009107b8cc520d
 -product/priv-app/OnePlusCameraService/OnePlusCameraService.apk|88c1fc5e5c88540b2fb92e363eefbc824de53edb
 -product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
