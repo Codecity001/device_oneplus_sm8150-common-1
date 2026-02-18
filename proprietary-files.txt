@@ -278,7 +278,6 @@ vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 vendor/bin/hw/vendor.oplus.hardware.cameraMDM@2.0-service|10fd0d1d8c91b70b7145db5fbbf1155a7a4b7093
 vendor/etc/init/vendor.oplus.hardware.cameraMDM@2.0-service.rc|8a8554aab6df0966ca70eb02476a263f2862a6e2
 vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml|2ec7e6b9cf5c4bca91bd8e875d32fc182a221d42
-vendor/lib64/vendor.oplus.hardware.cameraMDM@2.0.so|dce39a825a83fe264c4b4d5aef85b04094d94736
 
 # Camera - system cammidasservice client libs
 -system/lib/vendor.oplus.hardware.cammidasservice@1.0.so|2e6a272e752ca7888fc48aceff2fe923d32c4c03
