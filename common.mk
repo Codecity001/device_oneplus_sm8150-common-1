@@ -115,6 +115,7 @@ TARGET_BUILD_DEVICE_AS_WEBCAM := true
 
 $(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.opsm8150)
 $(call soong_config_set,camera,package_name,com.oplus.is.sdk.camera.package)
+$(call soong_config_set_bool,camera,needs_client_info_lib_oplus,true)
 
 # Configstore
 PRODUCT_PACKAGES += \
