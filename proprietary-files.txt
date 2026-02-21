@@ -106,6 +106,7 @@ odm/lib64/camera/fdconfigpreview.bin
 odm/lib64/camera/fdconfigpreviewlite.bin
 odm/lib64/camera/fdconfigvideo.bin
 odm/lib64/camera/fdconfigvideolite.bin
+odm/lib64/goldResult.bin
 odm/lib64/libarcsoft_dualcam_bokeh_api.so
 odm/lib64/libarcsoft_dualcam_refocus_left.so
 odm/lib64/libarcsoft_dualcam_refocus_preview.so
