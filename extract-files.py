@@ -54,7 +54,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     ('odm/lib64/mediadrm/libwvdrmengine.so', 'odm/lib64/libwvhidl.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
-    ('odm/lib64/libarcsoft_dualcam_refocus_preview.so', 'vendor/lib64/libarcsoft_super_night_raw.so'): blob_fixup()
+    'vendor/lib64/libarcsoft_super_night_raw.so': blob_fixup()
         .clear_symbol_version('remote_handle_close')
         .clear_symbol_version('remote_handle_invoke')
         .clear_symbol_version('remote_handle_open')
@@ -97,8 +97,6 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('<HID>0</HID>', '<HID>1</HID>'),
     'vendor/lib/hw/sound_trigger.primary.msmnile.so': blob_fixup()
         .binary_regex_replace(b'/vendor/lib/hw\x00', b'/odm/lib/hw\x00\x00\x00\x00'),
-    'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
-        .add_needed('libcamera_metadata_shim.so'),
     'vendor/lib64/libdpps.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2_1.so')
 }  # fmt: skip
