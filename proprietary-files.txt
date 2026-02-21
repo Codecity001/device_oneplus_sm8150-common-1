@@ -183,7 +183,6 @@ vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
 vendor/lib64/libSonyIMX471RmscLibrary.so
 vendor/lib64/lib_bokehlib.so
-vendor/lib64/lib_oneplus_watermark.so
 vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_distortion_correction.so
 vendor/lib64/libarcsoft_hdr_couple_api.so
@@ -287,6 +286,23 @@ vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml|2ec7e6b9cf5c4bca91bd8
 # Camera - system cammidasservice client libs
 -system/lib/vendor.oplus.hardware.cammidasservice@1.0.so|2e6a272e752ca7888fc48aceff2fe923d32c4c03
 -system/lib64/vendor.oplus.hardware.cammidasservice@1.0.so|0df7c75f2db3fdac9734ac6159185a62e3260138
+
+# Camera - image processing libs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
+vendor/lib/lib_oneplus_watermark.so|c1cfd7b9ac20cf15d00e66a2296cd84d88dde13c
+vendor/lib/libSTDualCamCaptureWT.so|97c9788ae8019c6212cf5ca52d55bce4f313b46b
+vendor/lib/libSuperSensor.so|745d176c62fa3dc7b9b1a43eb4cc6424c656ebb1
+vendor/lib/libSuperSensorFallback.so|19323a68005edb95077d34e4ef031e3e4c1f89e0
+vendor/lib/libSuperSensorProcessor.so|d979651214b387acc66bfa0b84cf2bb37230bcc0
+vendor/lib/libSuperSensorProcessorCWrapper.so|d6c5851cb5771d0bd2ccaf9113cab37bbc371531
+vendor/lib64/lib_oneplus_watermark.so|8bd31c911b085b935850c2de99be0b39901e9ea6
+vendor/lib64/libsdk_sr.so|25891c81656552c72ca5e663fa7d2a0753e22b5d
+vendor/lib64/libst_relighting.so|0ad0f2af6ddef2f02f18d1c737e6b368f5b22772
+vendor/lib64/libSTDualCamCaptureWT.so|d3da03a705d8225c8c49f934858cfb8137fe3668
+vendor/lib64/libSuperSensor.so|daa2d024d5d215b9d0da91e9a8c42985bca6b3ec
+vendor/lib64/libSuperSensorFallback.so|c2c49aa7e50b8a1e12ce171c45be7c197fa8dbfe
+vendor/lib64/libSuperSensorProcessor.so|3c50024db5f43fc277045108d8c40ffce0e94396
+vendor/lib64/libSuperSensorProcessorCWrapper.so|7d7ab50da766c6a416914b1f6d39db21a68e6281
+vendor/lib64/libtriplecam_image_optical_zoom.so|429a59d6d7f769b239ac6d0990ed6e750d93f261
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
