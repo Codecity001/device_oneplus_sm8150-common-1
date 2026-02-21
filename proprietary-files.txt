@@ -107,11 +107,11 @@ odm/lib64/camera/fdconfigpreviewlite.bin
 odm/lib64/camera/fdconfigvideo.bin
 odm/lib64/camera/fdconfigvideolite.bin
 odm/lib64/goldResult.bin
-odm/lib64/libarcsoft_dualcam_bokeh_api.so
-odm/lib64/libarcsoft_dualcam_refocus_left.so
-odm/lib64/libarcsoft_dualcam_refocus_preview.so
-odm/lib64/libarcsoft_dualcam_refocus_right.so
-odm/lib64/libarcsoft_dualcam_refocus_uw.so
+odm/lib64/libarcsoft_dualcam_bokeh_api.so;SYMLINK=vendor/lib64/libarcsoft_dualcam_bokeh_api.so;DISABLE_CHECKELF
+odm/lib64/libarcsoft_dualcam_refocus_left.so;SYMLINK=vendor/lib64/libarcsoft_dualcam_refocus_left.so;DISABLE_CHECKELF
+odm/lib64/libarcsoft_dualcam_refocus_preview.so;SYMLINK=vendor/lib64/libarcsoft_dualcam_refocus_preview.so;DISABLE_CHECKELF
+odm/lib64/libarcsoft_dualcam_refocus_right.so;SYMLINK=vendor/lib64/libarcsoft_dualcam_refocus_right.so;DISABLE_CHECKELF
+odm/lib64/libarcsoft_dualcam_refocus_uw.so;SYMLINK=vendor/lib64/libarcsoft_dualcam_refocus_uw.so;DISABLE_CHECKELF
 odm/lib64/libormshalclient.so
 odm/lib64/libvl53l1_daemon.so
 odm/lib64/sensors.hal.tof.so
