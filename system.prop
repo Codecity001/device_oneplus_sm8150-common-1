@@ -15,6 +15,10 @@ bluetooth.packet_recovery.adaptive=1
 bluetooth.transmission.robustness=enhanced
 ro.bluetooth.afh_channel_classification=ai_enabled
 
+# Camera
+libc.debug.malloc.program=android.hardware.camera.provider@2.4-service_64
+libc.debug.malloc.options=rear_guard=4096
+
 # Zram
 ro.zram.first_wb_delay_mins=1440
 ro.zram.mark_idle_delay_mins=60
