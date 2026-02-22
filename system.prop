@@ -1,3 +1,7 @@
 # App launch prefetching (IORapd)
 persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 ro.iorapd.enable=false
+
+# Camera
+libc.debug.malloc.options=rear_guard=4096
+libc.debug.malloc.program=android.hardware.camera.provider@2.4-service_64
