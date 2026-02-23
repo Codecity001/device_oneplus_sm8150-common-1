@@ -1,0 +1,47 @@
+# Post-processing daemon (ppd) SELinux policy for msmnile
+# Adapted from QCOM legacy/vendor/common for vendor-prefixed types
+
+type mm-pp-daemon, domain;
+type mm-pp-daemon_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(mm-pp-daemon)
+
+# Framebuffer ioctls for kernel communication
+allow mm-pp-daemon graphics_device:chr_file rw_file_perms;
+allow mm-pp-daemon graphics_device:dir r_dir_perms;
+
+# Reading/writing '/persist/display/*' for color config
+allow mm-pp-daemon vendor_persist_display_file:dir rw_dir_perms;
+allow mm-pp-daemon vendor_persist_display_file:file create_file_perms;
+
+# Directory search on '/persist'
+allow mm-pp-daemon mnt_vendor_file:dir search;
+
+# Reading/writing data config files
+allow mm-pp-daemon vendor_display_vendor_data_file:dir create_dir_perms;
+allow mm-pp-daemon vendor_display_vendor_data_file:file create_file_perms;
+
+# Read sensor device
+allow mm-pp-daemon sensors_device:chr_file r_file_perms;
+
+# Read display vendor properties
+get_prop(mm-pp-daemon, vendor_display_prop)
+
+# IPC communication
+allow mm-pp-daemon vendor_qdisplay_service:service_manager find;
+vndbinder_use(mm-pp-daemon)
+hal_client_domain(mm-pp-daemon, hal_graphics_composer)
+binder_call(mm-pp-daemon, system_server)
+
+# Brightness control via sysfs
+allow mm-pp-daemon sysfs_leds:dir r_dir_perms;
+allow mm-pp-daemon sysfs_leds:file rw_file_perms;
+allow mm-pp-daemon sysfs_leds:lnk_file read;
+allow mm-pp-daemon sysfs_graphics:dir r_dir_perms;
+allow mm-pp-daemon sysfs_graphics:file rw_file_perms;
+allow mm-pp-daemon vendor_sysfs_data:file r_file_perms;
+
+# PPS socket for display HAL communication
+unix_socket_connect(mm-pp-daemon, vendor_pps, hal_graphics_composer_default)
+
+allow mm-pp-daemon init:unix_stream_socket { listen accept };

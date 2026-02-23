@@ -210,3 +210,20 @@ service vendor.mdm_helper /vendor/bin/mdm_helper
     class core
     group system wakelock
     disabled
+
+service vendor.ppd /vendor/bin/ppd
+    class late_start
+    user system
+    group system graphics
+    oneshot
+    disabled
+
+service vendor.hwcomposer-2-4 /vendor/bin/hw/android.hardware.graphics.composer@2.4-service
+    override
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles ServiceCapacityLow
+    socket pps stream 0660 system system
