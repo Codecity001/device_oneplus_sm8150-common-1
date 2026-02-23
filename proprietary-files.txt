@@ -181,6 +181,7 @@ vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
 vendor/lib64/libSonyIMX471RmscLibrary.so
 vendor/lib64/lib_bokehlib.so
+vendor/lib64/lib_oneplus_watermark.so
 vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_distortion_correction.so
 vendor/lib64/libarcsoft_hdr_couple_api.so
