@@ -227,6 +227,7 @@ vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 -product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so|4659105d1ca963ddfab1560e21009107b8cc520d
 -product/priv-app/OnePlusCameraService/OnePlusCameraService.apk|88c1fc5e5c88540b2fb92e363eefbc824de53edb
 -product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
+-product/priv-app/OnePlusGallery/OnePlusGallery.apk|549647d21209b3756d4da5827de1ca1b41f3c49b
 
 # Camera - OnePlus Camera default permissions
 -product/etc/default-permissions/com.oneplus.camera.xml|3e6eb287fec6ad1d5323938e3359b033394a71ef
