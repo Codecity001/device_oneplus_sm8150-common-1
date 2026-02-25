@@ -229,6 +229,9 @@ vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 -product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
 -product/priv-app/OnePlusGallery/OnePlusGallery.apk|893a6294978e236b88fb7b4d5c787f6b5d11295b
 
+# Camera - Google Lens integration
+-product/etc/permissions/oplus_google_lens_config.xml|99aa6a5a38c1a4f357905895b3160516a8ec1063
+
 # Camera - OnePlus Camera default permissions
 -product/etc/default-permissions/com.oneplus.camera.xml|3e6eb287fec6ad1d5323938e3359b033394a71ef
 
