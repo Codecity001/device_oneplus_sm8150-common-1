@@ -33,6 +33,7 @@ on early-boot
 
 on boot
     # Display
+    setprop sys.oplus.multibrightness 0
     chown system system /dev/oplus_display
     chown system system /sys/kernel/oplus_display/dimlayer_bl_en
     chown system system /sys/kernel/oplus_display/dynamic_osc_clock
