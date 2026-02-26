@@ -6,3 +6,15 @@ ro.bpf.kver_override=5.10.247
 
 # Display
 ro.surface_flinger.has_wide_color_display=true
+
+# OnePlus Camera display properties (from OOS 12.1 H.41)
+ro.oplus.display.brightness.default_brightness=257
+ro.oplus.display.brightness.hbm_ys=1023,1185,1297,1571,1799,2047
+ro.oplus.display.brightness.min_light_in_dnm=14,14
+ro.oplus.display.brightness.normal_max_brightness=1023
+ro.oplus.display.brightness.xs=0,1,2,3,8,16,36,60,100,260,540,1000,2000,3500,5900,7000
+ro.oplus.display.brightness.ys=10,19,27,35,82,125,211,214,220,252,312,433,690,899,1023,1023
+ro.oplus.display.colormode.cinema=3
+ro.oplus.display.colormode.colorful=0
+ro.oplus.display.rc.size=108,108,111,111
+ro.oplus.display.support.renderIntent=0
