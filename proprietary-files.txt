@@ -536,7 +536,7 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/egl/eglSubDriverAndroid.so|36794c5177c5d1e4c39b58297a07eb694ce9288c
 vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so||6fa7746acee41f5c5b843502e48788b183cf0aff
 vendor/lib/egl/libGLESv1_CM_adreno.so|a8f127209e983ffa427b10fed646bd3741d3c653
-vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so|530b251b1af116f518007f34d66f0801033c6178
+vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so|a65f857edaaef207ac4597b3df716a3524cd534a
 vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so|381e2d2123f5a6bb1edcc3e281c38acf953ff08b
 vendor/lib/egl/libq3dtools_esx.so|f0018cad37986629ace20146b9ddba5f6882159d
 vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so|d4f26d511cd4f98b94c18f145d3246230fbc6d25
@@ -558,7 +558,7 @@ vendor/lib/libllvm-qgl.so|0fd44f9a0029a18cbc1cc5aec3562cc0a0d0060e
 vendor/lib64/egl/eglSubDriverAndroid.so|3dabc44583b7d9efae2663f359f2c5d1053d6002
 vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|860ed2358e89c555b738a0bb578e68da7c00e6c8
 vendor/lib64/egl/libGLESv1_CM_adreno.so|4538678560a8aa062b00f6690e4b268896c1b59d
-vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|fbc82874ae90a9163257990048cbb077e6828f57
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|2c63c6c3e2d99c24c83a8a2183456b0fe04bcd13
 vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|421f7776fda70f2ba8212790e9ac69a3f7288f77
 vendor/lib64/egl/libq3dtools_esx.so|22cc73afe2f8167a0f9953a33ff2eaa465dcfb34
 vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so|2fa3a828512eadd1afbb132099547d496ba65be2
