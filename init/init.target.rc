@@ -118,6 +118,8 @@ on early-boot
     start vendor.sensors
 
 on boot
+    write /proc/sys/kernel/unprivileged_bpf_disabled 1
+
     chown system system /sys/kernel/qvr_external_sensor/fd
 
 #Load WLAN driver
