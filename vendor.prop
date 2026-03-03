@@ -263,9 +263,18 @@ debug.hwui.target_cpu_time_percent=30
 # Incremental FS
 ro.incremental.enable=yes
 
-# LMKD/PSI
+# LMKD — PSI-based memory management
+ro.lmk.use_psi=true
+ro.lmk.psi_partial_stall_ms=70
+ro.lmk.psi_complete_stall_ms=500
+ro.lmk.thrashing_limit=70
+ro.lmk.thrashing_limit_decay=20
+ro.lmk.swap_free_low_percentage=15
+ro.lmk.swap_util_max=85
+ro.lmk.filecache_min_kb=153600
+ro.lmk.stall_limit_critical=60
 ro.lmk.kill_heaviest_task=true
-ro.lmk.kill_timeout_ms=15
+ro.lmk.kill_timeout_ms=50
 
 # Logging
 persist.log.tag.QC2Buf=W

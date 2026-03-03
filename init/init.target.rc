@@ -82,6 +82,13 @@ on init
     write /proc/sys/vm/watermark_scale_factor 50
     write /proc/sys/vm/extra_free_kbytes 24576
 
+    # VM writeback and cache tuning
+    write /proc/sys/vm/vfs_cache_pressure 150
+    write /proc/sys/vm/dirty_ratio 10
+    write /proc/sys/vm/dirty_background_ratio 5
+    write /proc/sys/vm/dirty_expire_centisecs 200
+    write /proc/sys/vm/dirty_writeback_centisecs 100
+
     # set default schedTune value for foreground/top-app
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
@@ -146,7 +153,7 @@ on property:sys.boot_completed=1
 
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.${ro.boot.hardware}
-    write /proc/sys/vm/swappiness 60
+    write /proc/sys/vm/swappiness 100
 
     # Setup runtime cpusets
     write /dev/cpuset/top-app/cpus 0-7
