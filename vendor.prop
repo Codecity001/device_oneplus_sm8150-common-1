@@ -167,7 +167,16 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 
 # Camera
+persist.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oplus.camera,org.telegram.messenger
+persist.sys.oem.region=OverSeas
+persist.vendor.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oplus.camera,org.telegram.messenger
+ro.camera.notify_nfc=1
+ro.opcamera.support=true
+ro.oplus.system.camera.name=com.oneplus.camera
+vendor.camera.algo.jpeghwencode=0
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
+vendor.camera.aux.packagelist=android,com.oneplus.camera,com.oppo.camera,com.oppo.engineermode,com.oplus.camera
+vendor.vidhance.video.enabled=0
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
