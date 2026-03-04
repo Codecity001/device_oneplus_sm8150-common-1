@@ -16,7 +16,8 @@
         android:label="OnePlusCameraHelper"
         android:persistent="true">
 
-        <receiver android:name="org.lineageos.camerahelper.BootCompletedReceiver">
+        <receiver android:name="org.lineageos.camerahelper.BootCompletedReceiver"
+                  android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
