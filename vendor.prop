@@ -169,15 +169,17 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 
 # Camera
+persist.camera.privapp.list=com.oneplus.camera,com.oplus.camera,com.oppo.camera
+persist.sys.oem.region=OverSeas
+persist.vendor.camera.privapp.list=com.oneplus.camera,com.oplus.camera,com.oppo.camera
+ro.camera.notify_nfc=1
+ro.opcamera.support=true
+ro.oplus.camera.video.beauty.switch=oplus.switch.video.beauty
+ro.oplus.camera.video_beauty.prefix=oplus.video.beauty.
+ro.oplus.system.camera.name=com.oneplus.camera
+vendor.camera.algo.jpeghwencode=0
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 vendor.camera.aux.packagelist=com.oneplus.camera,com.oppo.camera,com.oppo.engineermode,com.oplus.camera
-persist.vendor.camera.privapp.list=com.oneplus.camera,com.oplus.camera,com.oppo.camera
-persist.camera.privapp.list=com.oneplus.camera,com.oplus.camera,com.oppo.camera
-vendor.camera.algo.jpeghwencode=0
-ro.oplus.system.camera.name=com.oneplus.camera
-ro.camera.notify_nfc=1
-ro.oplus.camera.video_beauty.prefix=oplus.video.beauty.
-ro.oplus.camera.video.beauty.switch=oplus.switch.video.beauty
 vendor.vidhance.video.enabled=0
 
 # Crypto
