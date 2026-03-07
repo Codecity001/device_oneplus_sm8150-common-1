@@ -1,1 +1,5 @@
+# CachedAppOptimizer
+dontaudit system_server domain:process ptrace;
+
+# Motor
 rw_dir_file(system_server, sysfs_motor)
