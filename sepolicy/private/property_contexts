@@ -1,2 +1,5 @@
+# Bluetooth
+bluetooth.device_id.vendor_id     u:object_r:exported_bluetooth_prop:s0 exact int
+
 # Sensors
 vendor.sensors.als_correction.    u:object_r:vendor_sensors_als_prop:s0

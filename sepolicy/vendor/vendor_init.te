@@ -1,1 +1,12 @@
+# Bluetooth
+set_prop(vendor_init, exported_bluetooth_prop)
+
+# Memplus
+set_prop(vendor_init, vendor_system_prop)
+
+# Memory
+allow vendor_init proc_extra_free_kbytes:file { open write };
+allow vendor_init proc_watermark_scale_factor:file { open write };
+
+# Sensors
 set_prop(vendor_init, vendor_sensors_als_prop)
