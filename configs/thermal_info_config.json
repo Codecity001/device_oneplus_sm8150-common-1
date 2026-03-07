@@ -1,0 +1,671 @@
+{
+  "Sensors": [
+    {
+      "Name": "cpu-0-0-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-0-1-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-0-2-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-0-3-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-0-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-1-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-2-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-3-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-4-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-5-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-6-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cpu-1-7-usr",
+      "Type": "CPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "gpuss-0-usr",
+      "Type": "GPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "gpuss-1-usr",
+      "Type": "GPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "skin-therm",
+      "Type": "SKIN",
+      "HotThreshold": [
+        40,
+        44,
+        48,
+        52,
+        56,
+        62,
+        70
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "SendPowerHint": true,
+      "BindedCdevInfo": [
+        {
+          "CdevRequest": "thermal-cpufreq-0",
+          "LimitInfo": [
+            0,
+            0,
+            2,
+            4,
+            8,
+            12,
+            16
+          ]
+        },
+        {
+          "CdevRequest": "thermal-cpufreq-4",
+          "LimitInfo": [
+            0,
+            0,
+            2,
+            4,
+            6,
+            10,
+            14
+          ]
+        },
+        {
+          "CdevRequest": "thermal-cpufreq-7",
+          "LimitInfo": [
+            0,
+            0,
+            2,
+            3,
+            5,
+            8,
+            12
+          ]
+        },
+        {
+          "CdevRequest": "thermal-devfreq-0",
+          "LimitInfo": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "LogLevel": 5
+    },
+    {
+      "Name": "npu-usr",
+      "Type": "NPU",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "camera-usr",
+      "Type": "CAMERA",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "cwlan-usr",
+      "Type": "WIFI",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "mdm-core-usr",
+      "Type": "MODEM",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "ddr-usr",
+      "Type": "SOC",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "pm8150b-bcl-lvl0",
+      "Type": "BCL_CURRENT",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 1,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "pm8150b-bcl-lvl1",
+      "Type": "BCL_VOLTAGE",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 1,
+      "Monitor": true,
+      "LogLevel": 5
+    },
+    {
+      "Name": "soc",
+      "Type": "BCL_PERCENTAGE",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 1,
+      "Monitor": true,
+      "LogLevel": 5
+    }
+  ],
+  "CoolingDevices": [
+    {
+      "Name": "thermal-cpufreq-0",
+      "Type": "CPU"
+    },
+    {
+      "Name": "thermal-cpufreq-4",
+      "Type": "CPU"
+    },
+    {
+      "Name": "thermal-cpufreq-7",
+      "Type": "CPU"
+    },
+    {
+      "Name": "thermal-devfreq-0",
+      "Type": "GPU"
+    }
+  ]
+}
