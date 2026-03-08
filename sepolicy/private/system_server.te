@@ -1,5 +1,7 @@
 # CachedAppOptimizer
 dontaudit system_server domain:process ptrace;
 
+dontaudit system_server binderfs_logs_transactions:file r_file_perms;
+
 # Motor
 rw_dir_file(system_server, sysfs_motor)
