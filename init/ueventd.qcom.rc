@@ -180,6 +180,19 @@ firmware_directories /vendor/firmware_mnt/image/
 #rawdump
 /dev/block/platform/soc/*/by-name/rawdump       0660   root     system
 
+# Reserve partitions expected by H.41 OPlus blobs
+/dev/block/bootdevice/by-name/opporeserve1      0660   root     system
+/dev/block/sdf6                                 0660   root     system
+/dev/block/by-name/opporeserve3                 0660   root     system
+/dev/block/sdf8                                 0660   root     system
+/dev/block/bootdevice/by-name/oplusreserve1     0660   root     system
+/dev/block/by-name/oplusreserve3                0660   root     system
+/dev/block/bootdevice/by-name/reserve1          0660   root     system
+/dev/block/sde73                                0660   root     system
+/dev/block/sde75                                0660   root     system
+/dev/block/bootdevice/by-name/reserve3          0660   root     system
+/dev/block/sde77                                0660   root     system
+
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
