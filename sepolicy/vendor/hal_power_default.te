@@ -1,0 +1,2 @@
+# Thermal HAL
+hal_client_domain(hal_power_default, hal_thermal)
