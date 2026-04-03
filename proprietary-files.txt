@@ -814,6 +814,7 @@ vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC configs
+odm/etc/libese-nxp.conf:vendor/etc/libese-nxp.conf
 odm/etc/nfc/libnfc-nci.conf_18865:vendor/etc/libnfc-nci.conf
 odm/etc/nfc/libnfc-nxp.conf_18865:vendor/etc/libnfc-nxp.conf
 
