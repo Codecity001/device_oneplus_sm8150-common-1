@@ -519,6 +519,32 @@
       "Multiplier": 0.001,
       "Monitor": true,
       "LogLevel": 5
+    },
+    {
+      "Name": "pa-therm1",
+      "Type": "POWER_AMPLIFIER",
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        100,
+        115,
+        125
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "VrThreshold": "NAN",
+      "Multiplier": 0.001,
+      "Monitor": true,
+      "LogLevel": 5
     }
   ]
 }
