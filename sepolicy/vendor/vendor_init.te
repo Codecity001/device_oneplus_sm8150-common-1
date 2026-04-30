@@ -11,5 +11,8 @@ set_prop(vendor_init, vendor_system_prop)
 allow vendor_init proc_extra_free_kbytes:file { open write };
 allow vendor_init proc_watermark_scale_factor:file { open write };
 
+# proc/cmdline
+allow vendor_init proc_cmdline:file getattr;
+
 # Sensors
 set_prop(vendor_init, vendor_sensors_als_prop)
