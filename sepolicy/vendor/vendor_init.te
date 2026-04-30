@@ -1,3 +1,6 @@
+# ActivityManager background-service
+set_prop(vendor_init, vendor_bservice_prop)
+
 # Bluetooth
 set_prop(vendor_init, exported_bluetooth_prop)
 
