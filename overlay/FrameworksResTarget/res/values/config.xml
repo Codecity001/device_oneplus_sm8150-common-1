@@ -81,6 +81,11 @@
         <item>"/vendor/lib64/libllvm-qcom.so"</item>
     </string-array>
 
+    <!-- Packages that should not be frozen by the cached app freezer. -->
+    <string-array name="config_defaultCachedAppFreezerExemptionPkgs" translatable="false">
+        <item>com.oneplus.camera.service</item>
+    </string-array>
+
      <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
           when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
           where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
