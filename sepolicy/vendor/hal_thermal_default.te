@@ -3,3 +3,7 @@ allow hal_thermal_default self:netlink_generic_socket create_socket_perms_no_ioc
 
 # Power HAL
 hal_client_domain(hal_thermal_default, hal_power)
+
+# Stats HAL
+allow hal_thermal_default fwk_stats_service:service_manager find;
+binder_call(hal_thermal_default, stats_service_server);
