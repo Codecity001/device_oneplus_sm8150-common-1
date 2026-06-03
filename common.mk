@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
 
 # Dolby
 PRODUCT_PACKAGES += \
-    XiaomiDolby
+    LunarisDolby
 
 # Doze
 PRODUCT_PACKAGES += \
