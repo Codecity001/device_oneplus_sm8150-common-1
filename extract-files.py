@@ -84,7 +84,10 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/libdlbdsservice.so', 'vendor/lib/libstagefright_soft_ac4dec.so', 'vendor/lib/libstagefright_soft_ddpdec.so'): blob_fixup()
         .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
     'vendor/lib64/libdpps.so': blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2_1.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2_1.so'),
+    'vendor/lib64/sensors.ssc.so': blob_fixup()
+        .binary_regex_replace(b'\xf4\x03\x00\xaa\xd5\x03\x80\x52', b'\xf4\x03\x00\xaa\x35\x00\x80\x52')
+        .binary_regex_replace(b'\xe8\x13\x00\xf9\xfc\x39\x01\x94', b'\xe8\x13\x00\xf9\x1f\x20\x03\xd5')
 }  # fmt: skip
 
 module = ExtractUtilsModule(
