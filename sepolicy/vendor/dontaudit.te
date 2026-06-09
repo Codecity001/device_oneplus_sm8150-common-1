@@ -1,6 +1,3 @@
-# IMS
-dontaudit vendor_ims vendor_diag_device:chr_file rw_file_perms;
-
 # iorapd
 dontaudit vendor_init default_prop:property_service set;
 
