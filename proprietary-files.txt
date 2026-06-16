@@ -461,18 +461,39 @@ vendor/lib64/vendor.display.postproc@1.0.so
 
 # Dolby
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
+vendor/bin/hw/vendor.dolby.media.c2@1.0-service
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
-vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
+vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc
+vendor/etc/vintf/manifest/vendor.dolby.hardware.dms@2.0-service.xml
+vendor/etc/vintf/manifest/vendor.dolby.media.c2.xml
+vendor/lib/libdapparamstorage-dolby.so
 vendor/lib/libdapparamstorage.so
-vendor/lib/libdeccfg.so
-vendor/lib/libstagefright_soft_ac4dec.so
-vendor/lib/libstagefright_soft_ddpdec.so
-vendor/lib/soundfx/libswdap.so|810d0e266e4a77f06cba72fe8bdde2e1ede4f9f9
+vendor/lib/libdlbpreg.so
+vendor/lib/libstagefright_foundation-dolby.so
+vendor/lib/soundfx/libdlbvol.so
+vendor/lib/soundfx/libspatialaudio.so
+vendor/lib/soundfx/libswdap.so
 vendor/lib/soundfx/libswgamedap.so
 vendor/lib/soundfx/libswvqe.so
+vendor/lib/vendor.dolby.hardware.dms@2.0-dolby.so
 vendor/lib/vendor.dolby.hardware.dms@2.0.so
+vendor/lib64/libcodec2_soft_ac4dec.so
+vendor/lib64/libcodec2_soft_ddpdec.so
+vendor/lib64/libcodec2_soft_dolby.so
+vendor/lib64/libcodec2_store_dolby.so
+vendor/lib64/libdapparamstorage-dolby.so
 vendor/lib64/libdapparamstorage.so
+vendor/lib64/libdeccfg.so
 vendor/lib64/libdlbdsservice.so
+vendor/lib64/libdlbpreg.so
+vendor/lib64/liboem_specific.so
+vendor/lib64/libstagefright_foundation-dolby.so
+vendor/lib64/soundfx/libdlbvol.so
+vendor/lib64/soundfx/libspatialaudio.so
+vendor/lib64/soundfx/libswdap.so
+vendor/lib64/soundfx/libswgamedap.so
+vendor/lib64/soundfx/libswvqe.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0-dolby.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 

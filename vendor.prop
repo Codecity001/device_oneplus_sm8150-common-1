@@ -20,8 +20,6 @@ vendor.audio_hal.in_period_size=144
 vendor.audio_hal.period_multiplier=3
 vendor.audio_hal.period_size=192
 vendor.audio.adm.buffering.ms=2
-vendor.audio.dolby.ds2.enabled=false
-vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.enable.mirrorlink=false
 vendor.audio.feature.a2dp_offload.enable=true
 vendor.audio.feature.afe_proxy.enable=true
@@ -206,17 +204,28 @@ vendor.gralloc.disable_ubwc=0
 ro.surface_flinger.enable_frame_rate_override=false
 
 # Dolby
-ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1
+ro.vendor.dolby.dax.version=DAX3_3.7.0.8_r1
+vendor.audio.dolby.ds2.hardbypass=false
+vendor.audio.dolby.ds2.enabled=false
 
-# Dolby & Audio Miui Props
+# Dolby & Audio
 ro.audio.monitorRotation=true
 ro.vendor.audio.dolby.dax.support=true
-persist.vendor.audio.delta.refresh=true
 ro.vendor.audio.dolby.surround.enable=true
 
-# MiSound
-persist.vendor.audio.misound.disable=true
-ro.vendor.audio.misound.bluetooth.enable=true
+# Dolby Spatial Audio
+ro.audio.spatializer_enabled=true
+ro.audio.headtracking_enabled=false
+ro.audio.spatializer_transaural_enabled_default=false
+ro.audio.stereo_spatialization_enabled=true
+persist.vendor.audio.spatializer.speaker_enabled=true
+audio.spatializer.effect.util_clamp_min=300
+
+# Dolby Codec2
+vendor.audio.c2.preferred=true
+debug.c2.use_dmabufheaps=1
+vendor.qc2audio.suspend.enabled=true
+vendor.qc2audio.per_frame.flac.dec.enabled=true
 
 # DPM
 persist.vendor.dpmhalservice.enable=1

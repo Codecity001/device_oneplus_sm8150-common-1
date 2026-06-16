@@ -9,6 +9,7 @@
         <interface>
             <name>IComponentStore</name>
             <instance>default</instance>
+            <instance>default1</instance>
             <instance>dolby</instance>
             <instance>software</instance>
         </interface>
