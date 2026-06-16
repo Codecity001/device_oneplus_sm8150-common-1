@@ -233,10 +233,10 @@ vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 -product/etc/permissions/oplus_google_lens_config.xml|99aa6a5a38c1a4f357905895b3160516a8ec1063
 
 # Camera - OnePlus Camera default permissions
--product/etc/default-permissions/com.oneplus.camera.xml|3e6eb287fec6ad1d5323938e3359b033394a71ef
+product/etc/default-permissions/com.oneplus.camera.xml|3e6eb287fec6ad1d5323938e3359b033394a71ef
 
 # Camera - OnePlus Camera permissions
--product/etc/permissions/com.oneplus.camera.xml|da761de1ed440e590482c1210ae9879744b847e4
+product/etc/permissions/com.oneplus.camera.xml|da761de1ed440e590482c1210ae9879744b847e4
 -product/etc/permissions/com.oneplus.camera.service.xml|7ebd97a42322a77dde06e79120af99aaf74ddb6f
 
 # Camera - OnePlus Camera product JNI libs
@@ -253,7 +253,7 @@ vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 -product/lib64/libFileExtender-jni.so|06e1d883e22d91c84afd7589ae4504cc6819be22
 -product/lib64/libjnisingleblur_api.so|a4b40043aab548e0f32b22b10035c7ac8c879ab9
 -product/lib64/libjnistblur_api.so|47e94bcb50f0da7b94e26c4c3fb851bb82351f28
--product/lib64/libmpbase.so|c8c9a6a8b6cc049e65cf13f9d8fdca3c636c7c5d
+-product/lib64/libmpbase.so;MODULE_SUFFIX=_product|c8c9a6a8b6cc049e65cf13f9d8fdca3c636c7c5d
 -product/lib64/libOplusBlurPreviewJNI.so|ac7569de4ee14f002d5917f54b9b55bd7596a558
 -product/lib64/liboplusCode.so|002c8e8b2845c90754cfb368efdd9dd51f27f733
 -product/lib64/libsingle_camera_bokeh_native.so|84c9553528607ad81baccee6bb9b260038829554
@@ -283,8 +283,8 @@ vendor/etc/init/vendor.oplus.hardware.cameraMDM@2.0-service.rc|8a8554aab6df0966c
 vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml|2ec7e6b9cf5c4bca91bd8e875d32fc182a221d42
 
 # Camera - system cammidasservice client libs
--system/lib/vendor.oplus.hardware.cammidasservice@1.0.so|2e6a272e752ca7888fc48aceff2fe923d32c4c03
--system/lib64/vendor.oplus.hardware.cammidasservice@1.0.so|0df7c75f2db3fdac9734ac6159185a62e3260138
+-system/lib/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_system|2e6a272e752ca7888fc48aceff2fe923d32c4c03
+-system/lib64/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_system|0df7c75f2db3fdac9734ac6159185a62e3260138
 
 # Camera - image processing libs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
 vendor/lib/libOmxVpp.so|e650308d94ab16811e104dca5b2500b3107021b1
