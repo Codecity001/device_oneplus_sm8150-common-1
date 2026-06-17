@@ -72,6 +72,8 @@ blob_fixups: blob_fixups_user_type = {
         .patch_file('blob-patches/vendor.qti.adsprpc-service.rc.patch'),
     'vendor/etc/init/vendor.qti.cdsprpc-service.rc': blob_fixup()
         .patch_file('blob-patches/vendor.qti.cdsprpc-service.rc.patch'),
+    'vendor/etc/init/vendor.sensors.sscrpcd.rc': blob_fixup()
+        .patch_file('blob-patches/vendor.sensors.sscrpcd.rc.patch'),
     'vendor/etc/libnfc-nci.conf': blob_fixup()
         .regex_replace('NFC_DEBUG_ENABLED=0x01', 'NFC_DEBUG_ENABLED=0x00'),
     'vendor/etc/libnfc-nxp.conf': blob_fixup()
