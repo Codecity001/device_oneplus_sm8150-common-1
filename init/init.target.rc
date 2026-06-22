@@ -110,9 +110,6 @@ on late-fs
 on post-fs-data
     mkdir /data/vendor/audio/ultrasound 0770 audioserver audio
 
-on early-boot
-    start vendor.sensors
-
 on boot
     write /proc/sys/kernel/unprivileged_bpf_disabled 1
 
