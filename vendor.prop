@@ -218,7 +218,7 @@ ro.audio.spatializer_enabled=true
 ro.audio.headtracking_enabled=false
 ro.audio.spatializer_transaural_enabled_default=false
 ro.audio.stereo_spatialization_enabled=true
-persist.vendor.audio.spatializer.speaker_enabled=true
+persist.vendor.audio.spatializer.speaker_enabled=false
 audio.spatializer.effect.util_clamp_min=300
 
 # Dolby Codec2
