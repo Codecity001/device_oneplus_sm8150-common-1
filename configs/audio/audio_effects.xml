@@ -133,9 +133,10 @@
         <stream type="voice_call">
             <apply effect="voice_helper"/>
         </stream>
-        <!--DTS:X Ultra-->
+        <!--DTS:X Ultra + Dolby coexistence-->
         <stream type="music">
             <apply effect="dtsaudio"/>
+            <apply effect="dlb_music_listener"/>
         </stream>
         <!--DTS END-->
     </postprocess>
