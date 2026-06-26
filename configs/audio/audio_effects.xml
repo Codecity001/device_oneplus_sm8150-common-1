@@ -57,6 +57,9 @@
         <!--Spatial Audio-->
         <library name="spatializer" path="libspatialaudio.so"/>
         <!--Spatial Audio-->
+        <!--DTS:X Ultra-->
+        <library name="dtsaudio" path="libdtsaudio.so"/>
+        <!--DTS END-->
     </libraries>
     <effects>
         <effectProxy name="bassboost" library="proxy" uuid="14804144-a5ee-4d24-aa88-0002a5d5c51b">
@@ -122,11 +125,19 @@
         <!--Spatial Audio-->
         <effect name="spatializer" library="spatializer" uuid="cc4677de-ff72-11eb-9a03-0242ac130003"/>
         <!--Spatial Audio-->
+        <!--DTS:X Ultra-->
+        <effect name="dtsaudio" library="dtsaudio" uuid="146edfc0-7ed2-11e4-80eb-0002a5d5c51b"/>
+        <!--DTS END-->
     </effects>
     <postprocess>
         <stream type="voice_call">
             <apply effect="voice_helper"/>
         </stream>
+        <!--DTS:X Ultra-->
+        <stream type="music">
+            <apply effect="dtsaudio"/>
+        </stream>
+        <!--DTS END-->
     </postprocess>
     <preprocess>
         <stream type="voice_communication">

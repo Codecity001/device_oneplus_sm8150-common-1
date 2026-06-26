@@ -4,6 +4,10 @@ set_prop(vendor_init, vendor_bservice_prop)
 # Bluetooth
 set_prop(vendor_init, exported_bluetooth_prop)
 
+# DTS:X Ultra
+allow vendor_init dts_data_file:dir create_dir_perms;
+set_prop(vendor_init, vendor_dts_prop)
+
 # Memplus
 set_prop(vendor_init, vendor_system_prop)
 
