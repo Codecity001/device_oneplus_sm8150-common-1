@@ -1,2 +1,5 @@
+# DTS:X Ultra
+type dts_data_file, file_type, data_file_type;
+
 # Motor
 type sysfs_motor, sysfs_type, fs_type;

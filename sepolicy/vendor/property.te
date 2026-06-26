@@ -1,2 +1,5 @@
+# DTS:X Ultra
+vendor_public_prop(vendor_dts_prop)
+
 # Sensors
 vendor_internal_prop(vendor_sensor_prop)

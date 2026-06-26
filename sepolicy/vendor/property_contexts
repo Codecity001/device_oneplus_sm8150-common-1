@@ -1,5 +1,10 @@
 # Bluetooth
 persist.vendor.btstack.        u:object_r:vendor_bluetooth_prop:s0
 
+# DTS:X Ultra
+ro.vendor.dts.                 u:object_r:vendor_dts_prop:s0
+ro.vendor.feature.zte_feature_dts_ultra_enable    u:object_r:vendor_dts_prop:s0
+vendor.dts.audio.              u:object_r:vendor_dts_prop:s0
+
 # Sensors
 vendor.hal.sensor.             u:object_r:vendor_sensor_prop:s0
