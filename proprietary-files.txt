@@ -614,7 +614,7 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 -vendor/etc/dts/music_accessory48|414934f5b2cfde3b060f753326c28d0a1645da01
 -vendor/etc/dts/music_speaker48|a3ba8ea3e13b5f856b3a53255859a159e26f75bf
 -vendor/etc/dts/off_speaker48|99e5317d6f4a42bbb3ba680bd7f69f4af63ea528
--vendor/etc/dts/offline_hptuning.db|cdf68de23577045845f1ca2d2a4d556cfa58e098
+-vendor/etc/dts/offline_hptuning.db|29b7e4d78481de713a30e526bc6e013def2301c9
 -vendor/etc/dts/voice_accessory44|23f9d820d9d85877d1277ff86e604f6f623b93ce
 -vendor/etc/dts/voice_accessory48|73ee7532448b43c6205ae2831ebed31feae61b56
 -vendor/etc/dts/voice_speaker48|613d3e9bad27b4daacbaa6c29db954d06a8f01a5
