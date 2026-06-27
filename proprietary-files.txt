@@ -555,7 +555,7 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 -system/etc/permissions/dtsaudio.xml|559c3666fcc1fa2157e20d423684569f8e060722
 -system/etc/sysconfig/config-com.dts.dtsxultra.xml|f9afeee5119297ac73166b39884fcb98d1e89b68
 -system/framework/dtsaudio.jar|9a8a0b4c9fb9c787f7287d49f01aae18787cb433
--system/priv-app/DtsUltra/DtsUltra.apk|23b51923dbacf7f9e7b7b6bef8cd8acf2d2b10d8
+-system/priv-app/DtsUltra/DtsUltra.apk|31c374b101dc1bfb79c1ed4df3102c7b1bf002b7
 -vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_44.bin|d8bd8c37b78543ab9a9960ac9f67e297b27b2e7d
 -vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_48.bin|cfd77de69d14495b181aba3bffcfca56b2be01af
 -vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_bt_44.bin|5f396d15dbd0612a3617e60d44d53047990ecf9f
