@@ -57,6 +57,11 @@ on boot
     chown system system /sys/class/leds/led:switch_3/brightness
     chmod 0666 /sys/class/leds/led:switch_3/brightness
 
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    restorecon /sys/class/leds/lcd-backlight/brightness
+    restorecon /sys/class/leds/lcd-backlight/max_brightness
+
     # Motor
     chown system system /sys/class/motor/direction
     chown system system /sys/class/motor/enable
