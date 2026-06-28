@@ -35,7 +35,7 @@ binder_call(mm-pp-daemon, system_server)
 
 # Brightness control via sysfs
 allow mm-pp-daemon sysfs_leds:dir r_dir_perms;
-allow mm-pp-daemon sysfs_leds:file rw_file_perms;
+allow mm-pp-daemon sysfs_leds_oplus:file rw_file_perms;
 allow mm-pp-daemon sysfs_leds:lnk_file read;
 allow mm-pp-daemon sysfs_graphics:dir r_dir_perms;
 allow mm-pp-daemon sysfs_graphics:file rw_file_perms;
