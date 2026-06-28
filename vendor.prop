@@ -167,9 +167,9 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 
 # Camera
-persist.camera.privapp.list=com.oneplus.camera,com.oplus.camera,com.oppo.engineermode,org.telegram.messenger
+persist.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oplus.camera,org.telegram.messenger
 persist.sys.oem.region=OverSeas
-persist.vendor.camera.privapp.list=com.oneplus.camera,com.oppo.engineermode,com.oplus.camera,org.telegram.messenger
+persist.vendor.camera.privapp.list=com.oneplus.camera,com.oppo.camera,com.oplus.camera,org.telegram.messenger
 ro.camera.notify_nfc=1
 ro.opcamera.support=true
 ro.oplus.camera.video.beauty.switch=oplus.switch.video.beauty
