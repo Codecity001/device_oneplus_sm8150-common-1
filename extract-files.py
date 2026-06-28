@@ -69,6 +69,9 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so')
         .add_needed('libaudiobase.so'),
+    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
+        .add_needed('libaudiobase.so')
+        .add_needed('libwfd_shim.so'),
     'vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service': blob_fixup()
         .add_needed('libstagefright_foundation-v33.so'),
     'vendor/etc/init/vendor.qti.adsprpc-service.rc': blob_fixup()
