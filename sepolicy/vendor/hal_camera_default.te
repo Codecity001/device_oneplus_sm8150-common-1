@@ -1,6 +1,4 @@
 allow hal_camera_default sysfs:file r_file_perms;
-dontaudit hal_camera_default default_prop:file r_file_perms;
 
-allow hal_camera_default aac_drc_prop:file { getattr map open };
-allow hal_camera_default ab_update_gki_prop:file { getattr map open };
-allow hal_camera_default adaptive_haptics_prop:file { getattr map open };
+# Property scan
+dontaudit hal_camera_default property_type:file r_file_perms;

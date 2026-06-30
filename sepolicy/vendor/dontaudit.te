@@ -1,5 +1,35 @@
+# Bluetooth HAL
+dontaudit hal_bluetooth_default vendor_diag_device:chr_file rw_file_perms;
+
+# e2fsck
+dontaudit e2fs sysfs:file r_file_perms;
+
+# fsck
+dontaudit fsck sysfs:file r_file_perms;
+
+# GPU service
+dontaudit gpuservice fs_bpf:file getattr;
+
+# Health HAL
+dontaudit hal_health_default vendor_soc_id_prop:file r_file_perms;
+
 # iorapd
 dontaudit vendor_init default_prop:property_service set;
 
 # NNAPI HAL
 dontaudit vendor_hal_neuralnetworks_default default_prop:file r_file_perms;
+
+# Package cache
+dontaudit vendor_init system_data_file:dir write;
+
+# Privileged apps
+dontaudit priv_app_all { default_android_service fwk_vibrator_control_service hal_power_stats_service }:service_manager find;
+
+# QTI data services
+dontaudit vendor_qtidataservices_app default_prop:file r_file_perms;
+
+# Secure Element
+dontaudit secure_element system_data_file:file { getattr map open read };
+
+# toolbox
+dontaudit toolbox adb_data_file:dir search;
