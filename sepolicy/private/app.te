@@ -1,0 +1,2 @@
+# Inherited zygote socket
+allow appdomain zygote:unix_stream_socket getopt;
