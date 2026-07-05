@@ -551,11 +551,12 @@ vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # DTS:X Ultra
--system/etc/default-permissions/default-com.dts.dtsxultra.xml|08fddfd4d48a8d3b97372a765e016297a5050e92
+-system/etc/default-permissions/default-com.shadov.dtsx.xml|ebc9b80795cd5c58f58baf75666b84eca4dee92f
 -system/etc/permissions/dtsaudio.xml|559c3666fcc1fa2157e20d423684569f8e060722
--system/etc/sysconfig/config-com.dts.dtsxultra.xml|f9afeee5119297ac73166b39884fcb98d1e89b68
+-system/etc/permissions/privapp-permissions-dtsxultra.xml|8ffddeecefc737d855007a536210861e2b6a8df9
+-system/etc/sysconfig/config-com.shadov.dtsx.xml|60c14def6058ece6a5b0f9c46f0b2d199f80063d
 -system/framework/dtsaudio.jar|9a8a0b4c9fb9c787f7287d49f01aae18787cb433
--system/priv-app/DtsUltra/DtsUltra.apk|31c374b101dc1bfb79c1ed4df3102c7b1bf002b7
+-system/priv-app/DTSXULTRA/DTSXULTRA.apk|788817b2cdd44782c4f3db69bb594bcdf3ceef0e
 -vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_44.bin|d8bd8c37b78543ab9a9960ac9f67e297b27b2e7d
 -vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_48.bin|cfd77de69d14495b181aba3bffcfca56b2be01af
 -vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_bt_44.bin|5f396d15dbd0612a3617e60d44d53047990ecf9f
@@ -614,17 +615,17 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 -vendor/etc/dts/music_accessory48|414934f5b2cfde3b060f753326c28d0a1645da01
 -vendor/etc/dts/music_speaker48|a3ba8ea3e13b5f856b3a53255859a159e26f75bf
 -vendor/etc/dts/off_speaker48|99e5317d6f4a42bbb3ba680bd7f69f4af63ea528
--vendor/etc/dts/offline_hptuning.db|29b7e4d78481de713a30e526bc6e013def2301c9
+-vendor/etc/dts/offline_hptuning.db|9f71f4f3b2e70d8ef958dc38de7d047621b0a4c0
 -vendor/etc/dts/voice_accessory44|23f9d820d9d85877d1277ff86e604f6f623b93ce
 -vendor/etc/dts/voice_accessory48|73ee7532448b43c6205ae2831ebed31feae61b56
 -vendor/etc/dts/voice_speaker48|613d3e9bad27b4daacbaa6c29db954d06a8f01a5
 -vendor/etc/init/dtsaudio.rc|8942aec1eea5085495f1ea7afbafd448b3b31468
 -vendor/lib/libdts-eagle-shared.so|1dbead367dc1eef53633d42a6f6c301ce76cf416
 -vendor/lib/libdtsdsec.so|848b9db82b359cb694f268b3d3465e0648dfd89c
--vendor/lib/soundfx/libdtsaudio.so;DISABLE_CHECKELF|d582f160c4cff77fffcdbcf52ce467d4ec1a7df9
+-vendor/lib/soundfx/libdtsaudio.so;DISABLE_CHECKELF|e021b77196ee0a7c638d1771f2af5c018dd79ad7
 -vendor/lib64/libdts-eagle-shared.so|71a77ae104e9d085393a7e9a10fdbfa61fb8b07e
 -vendor/lib64/libdtsdsec.so|c5349e096929afcfec4259435ef9bd284dd0722a
--vendor/lib64/soundfx/libdtsaudio.so;DISABLE_CHECKELF|e89202d71830aa500bcb8b625987758ae4b71dc6
+-vendor/lib64/soundfx/libdtsaudio.so;DISABLE_CHECKELF|037eab39d0c827367c42e8664fe2bcd11a9db7ca
 
 # Fingerprint
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service
