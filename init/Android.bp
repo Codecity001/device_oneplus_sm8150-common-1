@@ -68,3 +68,14 @@ sh_binary {
     src: "init.qcom.sh",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "init.power-menu-default.rc",
+    src: "init.power-menu-default.rc",
+    sub_dir: "init",
+}
+
+prebuilt_etc {
+    name: "init.power-menu-default.sh",
+    src: "init.power-menu-default.sh",
+}
