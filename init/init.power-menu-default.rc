@@ -1,0 +1,10 @@
+service power_menu_default /system/bin/sh /system/etc/init.power-menu-default.sh
+    class late_start
+    user shell
+    group shell
+    seclabel u:r:shell:s0
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start power_menu_default
