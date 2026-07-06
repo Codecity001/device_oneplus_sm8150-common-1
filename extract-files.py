@@ -82,6 +82,8 @@ blob_fixups: blob_fixups_user_type = {
         .patch_file('blob-patches/vendor.sensors.sscrpcd.rc.patch'),
     'vendor/etc/init/vppservice.rc': blob_fixup()
         .patch_file('blob-patches/vppservice.rc.patch'),
+    'vendor/etc/sensors/sns_reg_config': blob_fixup()
+        .regex_replace('version=8', 'version=9'),
     'vendor/etc/libnfc-nci.conf': blob_fixup()
         .regex_replace('NFC_DEBUG_ENABLED=0x01', 'NFC_DEBUG_ENABLED=0x00'),
     'vendor/etc/libnfc-nxp.conf': blob_fixup()
