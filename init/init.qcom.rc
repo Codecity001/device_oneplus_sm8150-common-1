@@ -214,8 +214,6 @@ on post-fs-data
     mkdir /data/vendor/fm 0770 system system
     chmod 0770 /data/vendor/fm
 
-    mkdir /data/vendor/secure_element 0777 system system
-
     #Create IOP  deamon related dirs
     mkdir /data/vendor/iop 0700 root system
 

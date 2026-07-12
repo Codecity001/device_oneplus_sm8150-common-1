@@ -97,22 +97,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal override="true" format="hidl">
-        <name>android.hardware.secure_element</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.2::ISecureElement/SIM1</fqname>
-        <fqname>@1.2::ISecureElement/SIM2</fqname>
-        <fqname>@1.1::ISecureElement/eSE1</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.nxp.nxpese</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INxpEse</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
         <transport>hwbinder</transport>
