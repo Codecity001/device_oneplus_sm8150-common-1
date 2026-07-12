@@ -1,0 +1,2 @@
+# Component updater
+dontaudit isolated_app_all app_data_file:file setattr;
