@@ -223,7 +223,6 @@ audio.spatializer.effect.util_clamp_min=300
 
 # Dolby Codec2
 vendor.audio.c2.preferred=true
-debug.c2.use_dmabufheaps=1
 vendor.qc2audio.suspend.enabled=true
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 
