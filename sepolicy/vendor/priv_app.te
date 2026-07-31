@@ -1,1 +1,5 @@
 allow priv_app zygote:unix_stream_socket getopt;
+
+# Camera
+allow priv_app_36 vendor_sysfs_battery_supply:dir search;
+allow priv_app_36 vendor_sysfs_battery_supply:file r_file_perms;
