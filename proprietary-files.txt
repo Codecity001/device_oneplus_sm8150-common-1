@@ -281,9 +281,7 @@ product/etc/permissions/com.oneplus.camera.xml|da761de1ed440e590482c1210ae987974
 -system_ext/lib64/vendor.oplus.hardware.camera.slogan@1.0.so|65af5b36c5f6fd615b68c9803b581c6546bcd932
 -system_ext/lib64/vendor.oplus.hardware.engcamera@1.0.so|0fa6e9c86160916707772165305f521fcbdf529e
 
-# Camera - cameraMDM HIDL service
-vendor/bin/hw/vendor.oplus.hardware.cameraMDM@2.0-service|10fd0d1d8c91b70b7145db5fbbf1155a7a4b7093
-vendor/etc/init/vendor.oplus.hardware.cameraMDM@2.0-service.rc|8a8554aab6df0966ca70eb02476a263f2862a6e2
+# Camera - cameraMDM HIDL service is built from hardware/oplus
 vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml|2ec7e6b9cf5c4bca91bd8e875d32fc182a221d42
 
 # Camera - system cammidasservice client libs
