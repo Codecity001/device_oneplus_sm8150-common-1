@@ -236,7 +236,7 @@ drm.service.enabled=true
 # DTS:X Ultra
 ro.vendor.dts.cfgpath=/vendor/etc/dts/
 ro.vendor.feature.zte_feature_dts_ultra_enable=true
-vendor.dts.audio.allow_offload=true
+vendor.dts.audio.allow_offload=false
 
 # Fingerprint
 persist.vendor.qfp=true
