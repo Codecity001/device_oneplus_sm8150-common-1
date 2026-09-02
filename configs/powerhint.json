@@ -37,7 +37,8 @@
         "1497600",
         "1708800",
         "1920000",
-        "2131200"
+        "2131200",
+        "710400"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -65,7 +66,8 @@
         "1708800",
         "2015999",
         "2227200",
-        "2534400"
+        "2534400",
+        "825600"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -90,7 +92,8 @@
         "757000000",
         "675000000",
         "585000000",
-        "427000000"
+        "427000000",
+        "257000000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -141,6 +144,7 @@
       "Paths": ["/sys/class/kgsl/kgsl-3d0/idle_timer"],
       "Values": [
         "1000",
+        "10",
         "60"
       ],
       "ResetOnInit": true
@@ -900,6 +904,90 @@
       "Node": "DisplayWakeup",
       "Duration": 60,
       "Value": "1"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "710400"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 0,
+      "Value": "825600"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1036800"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "257000000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "GPUIdleTimer",
+      "Duration": 0,
+      "Value": "10"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPUBWMinFreq",
+      "Duration": 0,
+      "Value": "2288"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "LLCCBWMinFreq",
+      "Duration": 0,
+      "Value": "762"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "710400"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 0,
+      "Value": "825600"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1382400"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "257000000"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "GPUIdleTimer",
+      "Duration": 0,
+      "Value": "10"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUBWMinFreq",
+      "Duration": 0,
+      "Value": "2288"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "LLCCBWMinFreq",
+      "Duration": 0,
+      "Value": "762"
     },
     {
       "PowerHint": "LOW_POWER_LITTLE_CLUSTER_50",
