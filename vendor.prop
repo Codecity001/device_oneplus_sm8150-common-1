@@ -323,6 +323,7 @@ persist.sys.perf.scroll_opt=true
 persist.sys.perf.scroll_opt.heavy_app=1
 
 # Sensors
+persist.sys.assert.panic=false
 persist.vendor.sensors.debug.hal=0
 vendor.sensor.hal.pickup=android.sensor.tilt_detector
 
