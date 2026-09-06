@@ -693,16 +693,20 @@ void HalProxy::resetSharedWakelock() {
 
 void HalProxy::postEventsToMessageQueue(const std::vector<Event>& eventsList, size_t numWakeupEvents,
                                         V2_0::implementation::ScopedWakelock wakelock) {
+    // Keep ALS correction and publication ordered without holding up other sensors.
+    static std::mutex alsEventMutex;
+    std::unique_lock<std::mutex> alsLock(alsEventMutex, std::defer_lock);
+    std::vector<Event> events(eventsList);
+    for (auto& event : events) {
+        if (static_cast<int>(event.sensorType) == SENSOR_TYPE_QTI_WISE_LIGHT) {
+            if (!alsLock.owns_lock()) alsLock.lock();
+            AlsCorrection::process(event);
+        }
+    }
     size_t numToWrite = 0;
     std::lock_guard<std::mutex> lock(mEventQueueWriteMutex);
     if (wakelock.isLocked()) {
         incrementRefCountAndMaybeAcquireWakelock(numWakeupEvents);
-    }
-    std::vector<Event> events(eventsList);
-    for (auto& event : events) {
-        if (static_cast<int>(event.sensorType) == SENSOR_TYPE_QTI_WISE_LIGHT) {
-            AlsCorrection::process(event);
-        }
     }
     if (mPendingWriteEventsQueue.empty()) {
         numToWrite = std::min(events.size(), mEventQueue->availableToWrite());

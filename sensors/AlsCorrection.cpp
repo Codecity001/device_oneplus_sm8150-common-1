@@ -5,6 +5,7 @@
  */
 
 #include "AlsCorrection.h"
+#include "CaptureWorker.h"
 
 #include <android-base/properties.h>
 #include <android/binder_manager.h>
@@ -82,7 +83,29 @@ static struct {
 };
 
 static als_config conf;
-static std::shared_ptr<IAreaCapture> service;
+
+class AreaCaptureConnection {
+    std::shared_ptr<IAreaCapture> service;
+    std::chrono::steady_clock::time_point nextLookup = std::chrono::steady_clock::time_point::min();
+
+  public:
+    bool operator()(AreaRgbCaptureResult* result) {
+        if (service == nullptr) {
+            const auto now = std::chrono::steady_clock::now();
+            if (now < nextLookup) return false;
+            nextLookup = now + std::chrono::seconds(1);
+            const auto instance = std::string(IAreaCapture::descriptor) + "/default";
+            service = IAreaCapture::fromBinder(
+                    ::ndk::SpAIBinder(AServiceManager_checkService(instance.c_str())));
+            if (service == nullptr) return false;
+        }
+        const auto status = service->getAreaBrightness(result);
+        if (!status.isOk() && status.getStatus() != STATUS_OK) {
+            service.reset();
+        }
+        return status.isOk();
+    }
+};
 
 template <typename T>
 static T get(const std::string& path, const T& def) {
@@ -157,19 +180,11 @@ void AlsCorrection::init() {
         range.max /= conf.calib_gain * conf.sensor_inverse_gain[0];
     }
     hysteresis_ranges[0].min = -1.0;
-
-    const auto instancename = std::string(IAreaCapture::descriptor) + "/default";
-
-    if (AServiceManager_isDeclared(instancename.c_str())) {
-        service = IAreaCapture::fromBinder(::ndk::SpAIBinder(
-            AServiceManager_waitForService(instancename.c_str())));
-    } else {
-        ALOGE("Service is not registered");
-    }
 }
 
 void AlsCorrection::process(Event& event) {
-    static AreaRgbCaptureResult screenshot = { 0.0, 0.0, 0.0 };
+    static CaptureWorker captureWorker(AreaCaptureConnection{});
+    AreaRgbCaptureResult screenshot{};
 
     ALOGV("Raw sensor reading: %.0f", event.u.scalar);
 
@@ -203,7 +218,7 @@ void AlsCorrection::process(Event& event) {
             || ((event.u.scalar < state.hyst_min || event.u.scalar > state.hyst_max)
                 && (sensor_raw_calibrated < 10.0 || sensor_raw_calibrated > (5.0 / .07)))) {
 
-        if (service == nullptr || !service->getAreaBrightness(&screenshot).isOk()) {
+        if (!captureWorker.capture(&screenshot)) {
             ALOGE("Could not get area above sensor");
             // TODO figure out a better way to drop events
             event.sensorHandle = 0;
