@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from pathlib import Path
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -52,7 +54,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     ('odm/lib64/mediadrm/libwvdrmengine.so', 'odm/lib64/libwvhidl.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
-    ('odm/lib64/libarcsoft_dualcam_refocus_preview.so', 'vendor/lib64/libarcsoft_super_night_raw.so'): blob_fixup()
+    'vendor/lib64/libarcsoft_super_night_raw.so': blob_fixup()
         .clear_symbol_version('remote_handle_close')
         .clear_symbol_version('remote_handle_invoke')
         .clear_symbol_version('remote_handle_open')
@@ -105,6 +107,20 @@ module = ExtractUtilsModule(
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
+
+
+def add_custom_modules(ctx, packages_ctx):
+    ctx.bp_out.write(Path(__file__).with_name('proprietary-files.bp.in').read_text())
+    ctx.product_mk_out.write(
+        '\nPRODUCT_PACKAGES += \\\n'
+        '    OnePlusCamera \\\n'
+        '    libaudiohal@6.0 \\\n'
+        '    prebuilt_libCameraMDMHelper@2.0 \\\n'
+        '    prebuilt_libsnpe_dsp_v66_domains_v2_skel\n'
+    )
+
+
+module.proprietary_files[0].add_post_makefile_generation_fn(add_custom_modules)
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)

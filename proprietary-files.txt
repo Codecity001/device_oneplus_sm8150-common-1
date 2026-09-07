@@ -83,8 +83,8 @@ vendor/lib/soundfx/libqcreverb.so|e90d723c6599b68d69109650e017d85f1ea9a582
 vendor/lib/soundfx/libqcvirt.so|942ce731900b949a262f00a0702af899c3ecc82b
 
 # Audio - libaudiohal HIDL @6.0 (spatializer HIFI)
--system/lib/libaudiohal@6.0.so;DISABLE_CHECKELF|81fd0095329582b585a26711b78a41401f944216
--system/lib64/libaudiohal@6.0.so;DISABLE_CHECKELF|8fb2e76566a7ad94bcea9a367447f6de68a03927
+-system/lib/libaudiohal@6.0.so;DISABLE_CHECKELF;EXTRACT_ONLY|81fd0095329582b585a26711b78a41401f944216
+-system/lib64/libaudiohal@6.0.so;DISABLE_CHECKELF;EXTRACT_ONLY|8fb2e76566a7ad94bcea9a367447f6de68a03927
 
 # Bluetooth - from LA.UM.9.1.r1-13700-SMxxx0.QSSI13.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|07d96d0d3c4a500b14ea3c97e02b9eb5ee2bbc4d
@@ -227,69 +227,69 @@ vendor/lib64/libstblur_capture_api.so|ce37efca2ce8fcf5b4173b81b2d22b8be4e260f0
 vendor/lib64/libvppimmotion.so|8bbbbdba837d40e82474b078ae164a8ad42f7100
 
 # Camera - OnePlus Camera APKs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
--product/priv-app/OnePlusCamera/OnePlusCamera.apk|51d227a04c4d4f1dd2d09c4409f97a239c4763e2
--product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so|4659105d1ca963ddfab1560e21009107b8cc520d
+-product/priv-app/OnePlusCamera/OnePlusCamera.apk;EXTRACT_ONLY|51d227a04c4d4f1dd2d09c4409f97a239c4763e2
+-product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so;EXTRACT_ONLY|4659105d1ca963ddfab1560e21009107b8cc520d
 -product/priv-app/OnePlusCameraService/OnePlusCameraService.apk|88c1fc5e5c88540b2fb92e363eefbc824de53edb
--product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
+-product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so;EXTRACT_ONLY|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
 -product/priv-app/OnePlusGallery/OnePlusGallery.apk|549647d21209b3756d4da5827de1ca1b41f3c49b
 
 # Camera - Google Lens integration
--product/etc/permissions/oplus_google_lens_config.xml|99aa6a5a38c1a4f357905895b3160516a8ec1063
+product/etc/permissions/oplus_google_lens_config.xml|99aa6a5a38c1a4f357905895b3160516a8ec1063
 
 # Camera - OnePlus Camera default permissions
 product/etc/default-permissions/com.oneplus.camera.xml|3e6eb287fec6ad1d5323938e3359b033394a71ef
 
 # Camera - OnePlus Camera permissions
 product/etc/permissions/com.oneplus.camera.xml|da761de1ed440e590482c1210ae9879744b847e4
--product/etc/permissions/com.oneplus.camera.service.xml|7ebd97a42322a77dde06e79120af99aaf74ddb6f
+product/etc/permissions/com.oneplus.camera.service.xml|7ebd97a42322a77dde06e79120af99aaf74ddb6f
 
 # Camera - OnePlus Camera product JNI libs
--product/lib64/libAncFilter_jni.so|aba596037f5eb9c6ffaa4494f98a0e017b9dc87e
--product/lib64/libAncHumanDoubleExposure-jni.so|7fb9b281ef0f3221b3d6ffaf62e88f69f0c348b2
--product/lib64/libAncHumanRetain-jni_v2.so|7c0e466c1f5565ac652698c4ac10c2ff1ffb9ce1
--product/lib64/libAncHumanSegFigureFusion-jni.so|595d48a68ed1ab3b0a29fe89a177e9a7711dd08f
--product/lib64/libAncHumanVideo-jni.so|68d42af9383b4f207a9bf52c51cf28ca763eebbb
--product/lib64/libAncHumBokeh-jni.so|a25ea269fbacb802e6b9648317ac68de007b97ab
--product/lib64/libAPSClient-cmd-jni.so|6a7ecb43e00ff325f548aa0992ffcb2d77a5f48e
--product/lib64/libAPSClient-jni.so|43516783f1481f14d3592a09ecdb8d3875a495dc
--product/lib64/libApsFaceBeautyPreviewProductJni.so|b95014d6dca8159560cc39c7748369e5c2b7a647
--product/lib64/libextendfile.so|d3280355491c6e6b260c59a72914a7efa500ae62
--product/lib64/libFileExtender-jni.so|06e1d883e22d91c84afd7589ae4504cc6819be22
--product/lib64/libjnisingleblur_api.so|a4b40043aab548e0f32b22b10035c7ac8c879ab9
--product/lib64/libjnistblur_api.so|47e94bcb50f0da7b94e26c4c3fb851bb82351f28
--product/lib64/libmpbase.so;MODULE_SUFFIX=_product|c8c9a6a8b6cc049e65cf13f9d8fdca3c636c7c5d
--product/lib64/libOplusBlurPreviewJNI.so|ac7569de4ee14f002d5917f54b9b55bd7596a558
--product/lib64/liboplusCode.so|002c8e8b2845c90754cfb368efdd9dd51f27f733
--product/lib64/libsingle_camera_bokeh_native.so|84c9553528607ad81baccee6bb9b260038829554
--product/lib64/libSuperTextWrapper.so|61642d2f279361986ef1e54ab18917c61318853b
--product/lib64/libXDocProcessSDK-jni.so|42a1a638ed0e6202ad01a0bab153f44ecee7b089
--product/lib64/libXDocProcessSDK.so|a63b634ac75f3c9009939114c5caf6124615cd66
--product/lib64/libYTCommon.so|97f64f7c69355e80e81e9f3f0ceb11fd9b9be650
+-product/lib64/libAncFilter_jni.so;MODULE=prebuilt_libAncFilter_jni;DISABLE_DEPS|aba596037f5eb9c6ffaa4494f98a0e017b9dc87e
+-product/lib64/libAncHumanDoubleExposure-jni.so;MODULE=prebuilt_libAncHumanDoubleExposure-jni;DISABLE_DEPS|7fb9b281ef0f3221b3d6ffaf62e88f69f0c348b2
+-product/lib64/libAncHumanRetain-jni_v2.so;MODULE=prebuilt_libAncHumanRetain-jni_v2;DISABLE_DEPS|7c0e466c1f5565ac652698c4ac10c2ff1ffb9ce1
+-product/lib64/libAncHumanSegFigureFusion-jni.so;MODULE=prebuilt_libAncHumanSegFigureFusion-jni;DISABLE_DEPS|595d48a68ed1ab3b0a29fe89a177e9a7711dd08f
+-product/lib64/libAncHumanVideo-jni.so;MODULE=prebuilt_libAncHumanVideo-jni;DISABLE_DEPS|68d42af9383b4f207a9bf52c51cf28ca763eebbb
+-product/lib64/libAncHumBokeh-jni.so;MODULE=prebuilt_libAncHumBokeh-jni;DISABLE_DEPS|a25ea269fbacb802e6b9648317ac68de007b97ab
+-product/lib64/libAPSClient-cmd-jni.so;MODULE=prebuilt_libAPSClient-cmd-jni;DISABLE_DEPS|6a7ecb43e00ff325f548aa0992ffcb2d77a5f48e
+-product/lib64/libAPSClient-jni.so;MODULE=prebuilt_libAPSClient-jni;DISABLE_DEPS|43516783f1481f14d3592a09ecdb8d3875a495dc
+-product/lib64/libApsFaceBeautyPreviewProductJni.so;MODULE=prebuilt_libApsFaceBeautyPreviewProductJni;DISABLE_DEPS|b95014d6dca8159560cc39c7748369e5c2b7a647
+-product/lib64/libextendfile.so;MODULE=prebuilt_libextendfile;DISABLE_DEPS|d3280355491c6e6b260c59a72914a7efa500ae62
+-product/lib64/libFileExtender-jni.so;MODULE=prebuilt_libFileExtender-jni;DISABLE_DEPS|06e1d883e22d91c84afd7589ae4504cc6819be22
+-product/lib64/libjnisingleblur_api.so;MODULE=prebuilt_libjnisingleblur_api;DISABLE_DEPS|a4b40043aab548e0f32b22b10035c7ac8c879ab9
+-product/lib64/libjnistblur_api.so;MODULE=prebuilt_libjnistblur_api;DISABLE_DEPS|47e94bcb50f0da7b94e26c4c3fb851bb82351f28
+-product/lib64/libmpbase.so;MODULE=prebuilt_libmpbase;DISABLE_DEPS|c8c9a6a8b6cc049e65cf13f9d8fdca3c636c7c5d
+-product/lib64/libOplusBlurPreviewJNI.so;MODULE=prebuilt_libOplusBlurPreviewJNI;DISABLE_DEPS|ac7569de4ee14f002d5917f54b9b55bd7596a558
+-product/lib64/liboplusCode.so;MODULE=prebuilt_liboplusCode;DISABLE_DEPS|002c8e8b2845c90754cfb368efdd9dd51f27f733
+-product/lib64/libsingle_camera_bokeh_native.so;MODULE=prebuilt_libsingle_camera_bokeh_native;DISABLE_DEPS|84c9553528607ad81baccee6bb9b260038829554
+-product/lib64/libSuperTextWrapper.so;MODULE=prebuilt_libSuperTextWrapper;DISABLE_DEPS|61642d2f279361986ef1e54ab18917c61318853b
+-product/lib64/libXDocProcessSDK-jni.so;MODULE=prebuilt_libXDocProcessSDK-jni;DISABLE_DEPS|42a1a638ed0e6202ad01a0bab153f44ecee7b089
+-product/lib64/libXDocProcessSDK.so;MODULE=prebuilt_libXDocProcessSDK;DISABLE_DEPS|a63b634ac75f3c9009939114c5caf6124615cd66
+-product/lib64/libYTCommon.so;MODULE=prebuilt_libYTCommon;DISABLE_DEPS|97f64f7c69355e80e81e9f3f0ceb11fd9b9be650
 
 # Camera - system_ext HIDL stubs
--system_ext/lib/EngCameraClient.so|16aeafe0094986204f1372172c3fc67b2751b61b
--system_ext/lib/libjnistblur_api.qti.so|fc4910eb1b4bd079310ee83270d0b0e234266c13
--system_ext/lib/vendor.oplus.hardware.cameraMDM@1.0.so|21a36ebc25d5f95baa9707e3e7710238c2cf88d0
--system_ext/lib/vendor.oplus.hardware.cameraMDM@2.0.so|eaa0fba5b9f773f6b3e2724381c35e766ce36902
--system_ext/lib/vendor.oplus.hardware.engcamera@1.0.so|23178c54329f02a5d18484d62ecc992a2047e2b4
--system_ext/lib64/EngCameraClient.so|570e34cccfc65ca61340db70694355bf1f86d446
--system_ext/lib64/libjnistblur_api.qti.so|f83759dba7eb3cdf8add8228e91e2feab0164363
--system_ext/lib64/libOplusSloganClient.so|f06b1e6411ee49997dc4d63016b589dc0f112dec
--system_ext/lib64/libSloganJni.oplus.so|949c1b34d14f8dd2312f2336f2bb4824c088ea51
--system_ext/lib64/vendor.oplus.hardware.cameraMDM@1.0.so|f3f829247900e47949b0edb3ac6de6ab83c07603
--system_ext/lib64/vendor.oplus.hardware.cameraMDM@2.0.so|8889bc6d05accbd05c68f173d3d2c28653c6d531
--system_ext/lib64/vendor.oplus.hardware.camera.slogan@1.0.so|65af5b36c5f6fd615b68c9803b581c6546bcd932
--system_ext/lib64/vendor.oplus.hardware.engcamera@1.0.so|0fa6e9c86160916707772165305f521fcbdf529e
+-system_ext/lib/EngCameraClient.so;MODULE=prebuilt_EngCameraClient_sysext;DISABLE_DEPS|16aeafe0094986204f1372172c3fc67b2751b61b
+-system_ext/lib/libjnistblur_api.qti.so;MODULE=prebuilt_libjnistblur_api.qti_sysext;DISABLE_DEPS|fc4910eb1b4bd079310ee83270d0b0e234266c13
+-system_ext/lib/vendor.oplus.hardware.cameraMDM@1.0.so;MODULE=prebuilt_vendor.oplus.hardware.cameraMDM@1.0_sysext;DISABLE_DEPS|21a36ebc25d5f95baa9707e3e7710238c2cf88d0
+-system_ext/lib/vendor.oplus.hardware.cameraMDM@2.0.so;MODULE=prebuilt_vendor.oplus.hardware.cameraMDM@2.0_sysext;DISABLE_DEPS|eaa0fba5b9f773f6b3e2724381c35e766ce36902
+-system_ext/lib/vendor.oplus.hardware.engcamera@1.0.so;MODULE=prebuilt_vendor.oplus.hardware.engcamera@1.0_sysext;DISABLE_DEPS|23178c54329f02a5d18484d62ecc992a2047e2b4
+-system_ext/lib64/EngCameraClient.so;MODULE=prebuilt_EngCameraClient_sysext;DISABLE_DEPS|570e34cccfc65ca61340db70694355bf1f86d446
+-system_ext/lib64/libjnistblur_api.qti.so;MODULE=prebuilt_libjnistblur_api.qti_sysext;DISABLE_DEPS|f83759dba7eb3cdf8add8228e91e2feab0164363
+-system_ext/lib64/libOplusSloganClient.so;MODULE=prebuilt_libOplusSloganClient_sysext;DISABLE_DEPS|f06b1e6411ee49997dc4d63016b589dc0f112dec
+-system_ext/lib64/libSloganJni.oplus.so;MODULE=prebuilt_libSloganJni.oplus_sysext;DISABLE_DEPS|949c1b34d14f8dd2312f2336f2bb4824c088ea51
+-system_ext/lib64/vendor.oplus.hardware.cameraMDM@1.0.so;MODULE=prebuilt_vendor.oplus.hardware.cameraMDM@1.0_sysext;DISABLE_DEPS|f3f829247900e47949b0edb3ac6de6ab83c07603
+-system_ext/lib64/vendor.oplus.hardware.cameraMDM@2.0.so;MODULE=prebuilt_vendor.oplus.hardware.cameraMDM@2.0_sysext;DISABLE_DEPS|8889bc6d05accbd05c68f173d3d2c28653c6d531
+-system_ext/lib64/vendor.oplus.hardware.camera.slogan@1.0.so;MODULE=prebuilt_vendor.oplus.hardware.camera.slogan@1.0_sysext;DISABLE_DEPS|65af5b36c5f6fd615b68c9803b581c6546bcd932
+-system_ext/lib64/vendor.oplus.hardware.engcamera@1.0.so;MODULE=prebuilt_vendor.oplus.hardware.engcamera@1.0_sysext;DISABLE_DEPS|0fa6e9c86160916707772165305f521fcbdf529e
 
 # Camera - cameraMDM HIDL service is built from hardware/oplus
 vendor/etc/vintf/manifest/manifest_oplus_cameramdm_2.0.xml|2ec7e6b9cf5c4bca91bd8e875d32fc182a221d42
 
 # Camera - system cammidasservice client libs
--system/lib/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_system|2e6a272e752ca7888fc48aceff2fe923d32c4c03
--system/lib64/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_system|0df7c75f2db3fdac9734ac6159185a62e3260138
+-system/lib/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_system;DISABLE_DEPS|2e6a272e752ca7888fc48aceff2fe923d32c4c03
+-system/lib64/vendor.oplus.hardware.cammidasservice@1.0.so;MODULE_SUFFIX=_system;DISABLE_DEPS|0df7c75f2db3fdac9734ac6159185a62e3260138
 
 # Camera - image processing libs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
-vendor/lib/libOmxVpp.so|e650308d94ab16811e104dca5b2500b3107021b1
+vendor/lib/libOmxVpp.so;DISABLE_CHECKELF|e650308d94ab16811e104dca5b2500b3107021b1
 vendor/lib/libSTDualCamCaptureWT.so|97c9788ae8019c6212cf5ca52d55bce4f313b46b
 vendor/lib/libSuperSensor.so|745d176c62fa3dc7b9b1a43eb4cc6424c656ebb1
 vendor/lib/libSuperSensorFallback.so|19323a68005edb95077d34e4ef031e3e4c1f89e0
@@ -301,7 +301,7 @@ vendor/lib/libcvp_common.so|0a2c4204c13d07b97eba69f1d2a66a88230e621c
 vendor/lib/libcvp_stub.so|80e87a6df911fa2f1db4e7461f9a689301820b7f
 vendor/lib/libcvpcpuRev_skel.so|2f7b45b12e76c9a0e3e381b89494049982b72ee1
 vendor/lib/vendor.qti.hardware.cvp@1.0.so|e22cdb4a868d6ad0d0f6e49dca72f47eec098f2a
-vendor/lib64/libOmxVpp.so|1733cb779a86d51f4923f9f1313b477deee9edcd
+vendor/lib64/libOmxVpp.so;DISABLE_CHECKELF|1733cb779a86d51f4923f9f1313b477deee9edcd
 vendor/lib64/lib_oneplus_watermark.so|8bd31c911b085b935850c2de99be0b39901e9ea6
 vendor/lib64/libcvp.so|54fbcb78b7e61b78d1362948e6e815ad98dcb4f7
 vendor/lib64/libcvp_common.so|d49925b3689f504a6a52a3e0ca7c2e1f8b9420c3
@@ -549,75 +549,75 @@ vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # DTS:X Ultra
--system/etc/default-permissions/default-com.shadov.dtsx.xml|ebc9b80795cd5c58f58baf75666b84eca4dee92f
--system/etc/permissions/dtsaudio.xml|559c3666fcc1fa2157e20d423684569f8e060722
--system/etc/permissions/privapp-permissions-dtsxultra.xml|8ffddeecefc737d855007a536210861e2b6a8df9
--system/etc/sysconfig/config-com.shadov.dtsx.xml|60c14def6058ece6a5b0f9c46f0b2d199f80063d
+system/etc/default-permissions/default-com.shadov.dtsx.xml|ebc9b80795cd5c58f58baf75666b84eca4dee92f
+system/etc/permissions/dtsaudio.xml|559c3666fcc1fa2157e20d423684569f8e060722
+system/etc/permissions/privapp-permissions-dtsxultra.xml|8ffddeecefc737d855007a536210861e2b6a8df9
+system/etc/sysconfig/config-com.shadov.dtsx.xml|60c14def6058ece6a5b0f9c46f0b2d199f80063d
 -system/framework/dtsaudio.jar|9a8a0b4c9fb9c787f7287d49f01aae18787cb433
--system/priv-app/DTSXULTRA/DTSXULTRA.apk|788817b2cdd44782c4f3db69bb594bcdf3ceef0e
--vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_44.bin|d8bd8c37b78543ab9a9960ac9f67e297b27b2e7d
--vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_48.bin|cfd77de69d14495b181aba3bffcfca56b2be01af
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_bt_44.bin|5f396d15dbd0612a3617e60d44d53047990ecf9f
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_bt_48.bin|fec39ac6d7a062e1b96766f251148d562f4adab6
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_usb_44.bin|5f396d15dbd0612a3617e60d44d53047990ecf9f
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_usb_48.bin|61785de3621278a945421aa868531ea4118b2bf3
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_wh_48.bin|61785de3621278a945421aa868531ea4118b2bf3
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_bt_44.bin|367477c0074a5561ee138925e36e1696c73f172e
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_bt_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_usb_44.bin|367477c0074a5561ee138925e36e1696c73f172e
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_usb_48.bin|49e434e59bc3dace22fcce5db848c3986f3edcdb
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_wh_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_bt_44.bin|674322112d01036785767767e952d09c18e7ea94
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_bt_48.bin|d4eec3151a90147d2119903a0d2d77e043b94920
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_usb_44.bin|0ff0790027f82d26c29f54c6f4f109b35e817c1e
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_usb_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_wh_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_bt_44.bin|c5acc3d21f1addc75ddb6bf202ec8ee1d38222f8
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_bt_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_usb_44.bin|c5acc3d21f1addc75ddb6bf202ec8ee1d38222f8
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_usb_48.bin|49e434e59bc3dace22fcce5db848c3986f3edcdb
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_wh_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_bt_44.bin|6cbaad678eb020c1d380858b516139d997512fc3
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_bt_48.bin|13c2166c2ceae2c853f73077be7b18090611ce6c
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_usb_44.bin|6cbaad678eb020c1d380858b516139d997512fc3
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_usb_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
--vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_wh_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
--vendor/etc/dts/beq48|0530558b0183b11192096edfee1319a96c9b5729
--vendor/etc/dts/ctc|b6d5d6f054fd883a93037ee40078eefc785ee31e
--vendor/etc/dts/current_bluetooth44k|d0ce2dd8eb0c627e6c9bf6059f68a16c1513b7ca
--vendor/etc/dts/current_bluetooth48k|e7790c0b1296ba7f9dee002e3f40ad6bb3a02f7d
--vendor/etc/dts/current_lineout48k|29cbd09c65af341e211241da4c29c80e7e1d4769
--vendor/etc/dts/current_speaker48k|a5696b6bb3233f6ebd6c4a183cb4567937386a35
--vendor/etc/dts/current_usb44k|d0ce2dd8eb0c627e6c9bf6059f68a16c1513b7ca
--vendor/etc/dts/current_usb48k|e7790c0b1296ba7f9dee002e3f40ad6bb3a02f7d
--vendor/etc/dts/custom_accessory44|3be4dd45184e78ecce08e445bb0caa4ae61aa459
--vendor/etc/dts/custom_accessory48|67d95caeecc6fdff9812f2be2238e0d54cb517af
--vendor/etc/dts/custom_speaker48|53ff31c27f0dcefe218b8591465f7f8f749b74da
--vendor/etc/dts/customer.cfg|84bbd5dde2c0760b81d893d86907b6d30edbde85
--vendor/etc/dts/default_accessory44|2f96e5e800675dbd290fea0f463eb7d0535778dc
--vendor/etc/dts/default_accessory48|db4f1ead4ef615a032cf49bff13901ea2b711331
--vendor/etc/dts/default_speaker48|53ff31c27f0dcefe218b8591465f7f8f749b74da
--vendor/etc/dts/game1_accessory44|51228ec9c0a12a69b8d66bcb03cf99aa255c2ea4
--vendor/etc/dts/game1_accessory48|32fc3fb46ed0f1fec7f3b055b2f513973af3332e
--vendor/etc/dts/game1_speaker48|95a3478d979902c085167cfe71ec5429944baf68
--vendor/etc/dts/game2_accessory44|fe9547860a7f41d8778780e2f24e87a2e18f6c0e
--vendor/etc/dts/game2_accessory48|c7c701c4dabd48e61a56469b61a8cad83e58e1a5
--vendor/etc/dts/game2_speaker48|d5f5c0a02b97a39b97a053d6396b8fb0e78e9214
--vendor/etc/dts/game3_accessory44|9ca2e482a0d95a9f3cf06fc5fc39f719480d3a2c
--vendor/etc/dts/game3_accessory48|38c06fbeb6012845cdace13d5bd48b0d992b9a85
--vendor/etc/dts/game3_speaker48|113161ced57920de8dfe62195e2aa0df257cfa13
--vendor/etc/dts/movie_accessory44|d079f57dc59607c4cce48ed36010b7d20ed5cbbc
--vendor/etc/dts/movie_accessory48|3b107081bde8cccda1b972514fc5c6c01225a17f
--vendor/etc/dts/movie_speaker48|f4fffad29f3b08d9ddc2f25388ba6ba90597ba4d
--vendor/etc/dts/music_accessory44|a071a4b6d619894a4d14569ca010e8492ad82ca6
--vendor/etc/dts/music_accessory48|414934f5b2cfde3b060f753326c28d0a1645da01
--vendor/etc/dts/music_speaker48|a3ba8ea3e13b5f856b3a53255859a159e26f75bf
--vendor/etc/dts/off_speaker48|99e5317d6f4a42bbb3ba680bd7f69f4af63ea528
--vendor/etc/dts/offline_hptuning.db|9f71f4f3b2e70d8ef958dc38de7d047621b0a4c0
--vendor/etc/dts/voice_accessory44|23f9d820d9d85877d1277ff86e604f6f623b93ce
--vendor/etc/dts/voice_accessory48|73ee7532448b43c6205ae2831ebed31feae61b56
--vendor/etc/dts/voice_speaker48|613d3e9bad27b4daacbaa6c29db954d06a8f01a5
--vendor/etc/init/dtsaudio.rc|8942aec1eea5085495f1ea7afbafd448b3b31468
+-system/priv-app/DTSXULTRA/DTSXULTRA.apk;PRESIGNED;SKIPAPKCHECKS|788817b2cdd44782c4f3db69bb594bcdf3ceef0e
+vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_44.bin|d8bd8c37b78543ab9a9960ac9f67e297b27b2e7d
+vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_48.bin|cfd77de69d14495b181aba3bffcfca56b2be01af
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_bt_44.bin|5f396d15dbd0612a3617e60d44d53047990ecf9f
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_bt_48.bin|fec39ac6d7a062e1b96766f251148d562f4adab6
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_usb_44.bin|5f396d15dbd0612a3617e60d44d53047990ecf9f
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_usb_48.bin|61785de3621278a945421aa868531ea4118b2bf3
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a11_wh_48.bin|61785de3621278a945421aa868531ea4118b2bf3
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_bt_44.bin|367477c0074a5561ee138925e36e1696c73f172e
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_bt_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_usb_44.bin|367477c0074a5561ee138925e36e1696c73f172e
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_usb_48.bin|49e434e59bc3dace22fcce5db848c3986f3edcdb
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a12_wh_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_bt_44.bin|674322112d01036785767767e952d09c18e7ea94
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_bt_48.bin|d4eec3151a90147d2119903a0d2d77e043b94920
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_usb_44.bin|0ff0790027f82d26c29f54c6f4f109b35e817c1e
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_usb_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a13_wh_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_bt_44.bin|c5acc3d21f1addc75ddb6bf202ec8ee1d38222f8
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_bt_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_usb_44.bin|c5acc3d21f1addc75ddb6bf202ec8ee1d38222f8
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_usb_48.bin|49e434e59bc3dace22fcce5db848c3986f3edcdb
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a14_wh_48.bin|82ac3768b4c3b84f53d5d74aa00c6a6651a9a499
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_bt_44.bin|6cbaad678eb020c1d380858b516139d997512fc3
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_bt_48.bin|13c2166c2ceae2c853f73077be7b18090611ce6c
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_usb_44.bin|6cbaad678eb020c1d380858b516139d997512fc3
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_usb_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
+vendor/etc/dts/acc/f08a4c48-0887-11e4-9191-0800200c9a15_wh_48.bin|847e50c4e7a2272843b9b237e2849fac1cf8832e
+vendor/etc/dts/beq48|0530558b0183b11192096edfee1319a96c9b5729
+vendor/etc/dts/ctc|b6d5d6f054fd883a93037ee40078eefc785ee31e
+vendor/etc/dts/current_bluetooth44k|d0ce2dd8eb0c627e6c9bf6059f68a16c1513b7ca
+vendor/etc/dts/current_bluetooth48k|e7790c0b1296ba7f9dee002e3f40ad6bb3a02f7d
+vendor/etc/dts/current_lineout48k|29cbd09c65af341e211241da4c29c80e7e1d4769
+vendor/etc/dts/current_speaker48k|a5696b6bb3233f6ebd6c4a183cb4567937386a35
+vendor/etc/dts/current_usb44k|d0ce2dd8eb0c627e6c9bf6059f68a16c1513b7ca
+vendor/etc/dts/current_usb48k|e7790c0b1296ba7f9dee002e3f40ad6bb3a02f7d
+vendor/etc/dts/custom_accessory44|3be4dd45184e78ecce08e445bb0caa4ae61aa459
+vendor/etc/dts/custom_accessory48|67d95caeecc6fdff9812f2be2238e0d54cb517af
+vendor/etc/dts/custom_speaker48|53ff31c27f0dcefe218b8591465f7f8f749b74da
+vendor/etc/dts/customer.cfg|84bbd5dde2c0760b81d893d86907b6d30edbde85
+vendor/etc/dts/default_accessory44|2f96e5e800675dbd290fea0f463eb7d0535778dc
+vendor/etc/dts/default_accessory48|db4f1ead4ef615a032cf49bff13901ea2b711331
+vendor/etc/dts/default_speaker48|53ff31c27f0dcefe218b8591465f7f8f749b74da
+vendor/etc/dts/game1_accessory44|51228ec9c0a12a69b8d66bcb03cf99aa255c2ea4
+vendor/etc/dts/game1_accessory48|32fc3fb46ed0f1fec7f3b055b2f513973af3332e
+vendor/etc/dts/game1_speaker48|95a3478d979902c085167cfe71ec5429944baf68
+vendor/etc/dts/game2_accessory44|fe9547860a7f41d8778780e2f24e87a2e18f6c0e
+vendor/etc/dts/game2_accessory48|c7c701c4dabd48e61a56469b61a8cad83e58e1a5
+vendor/etc/dts/game2_speaker48|d5f5c0a02b97a39b97a053d6396b8fb0e78e9214
+vendor/etc/dts/game3_accessory44|9ca2e482a0d95a9f3cf06fc5fc39f719480d3a2c
+vendor/etc/dts/game3_accessory48|38c06fbeb6012845cdace13d5bd48b0d992b9a85
+vendor/etc/dts/game3_speaker48|113161ced57920de8dfe62195e2aa0df257cfa13
+vendor/etc/dts/movie_accessory44|d079f57dc59607c4cce48ed36010b7d20ed5cbbc
+vendor/etc/dts/movie_accessory48|3b107081bde8cccda1b972514fc5c6c01225a17f
+vendor/etc/dts/movie_speaker48|f4fffad29f3b08d9ddc2f25388ba6ba90597ba4d
+vendor/etc/dts/music_accessory44|a071a4b6d619894a4d14569ca010e8492ad82ca6
+vendor/etc/dts/music_accessory48|414934f5b2cfde3b060f753326c28d0a1645da01
+vendor/etc/dts/music_speaker48|a3ba8ea3e13b5f856b3a53255859a159e26f75bf
+vendor/etc/dts/off_speaker48|99e5317d6f4a42bbb3ba680bd7f69f4af63ea528
+vendor/etc/dts/offline_hptuning.db|9f71f4f3b2e70d8ef958dc38de7d047621b0a4c0
+vendor/etc/dts/voice_accessory44|23f9d820d9d85877d1277ff86e604f6f623b93ce
+vendor/etc/dts/voice_accessory48|73ee7532448b43c6205ae2831ebed31feae61b56
+vendor/etc/dts/voice_speaker48|613d3e9bad27b4daacbaa6c29db954d06a8f01a5
+vendor/etc/init/dtsaudio.rc|8942aec1eea5085495f1ea7afbafd448b3b31468
 -vendor/lib/libdts-eagle-shared.so|1dbead367dc1eef53633d42a6f6c301ce76cf416
 -vendor/lib/libdtsdsec.so|848b9db82b359cb694f268b3d3465e0648dfd89c
 -vendor/lib/soundfx/libdtsaudio.so;DISABLE_CHECKELF|e021b77196ee0a7c638d1771f2af5c018dd79ad7
@@ -1299,3 +1299,8 @@ vendor/lib/libwfduibcsrcinterface_proprietary.so|bfd97b6d662657234774a3c9c87f8a0
 vendor/lib/libwfdutils_proprietary.so|3ca0bd1c8c73c0cdeaf643cb940befba5c48267e
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor|c08e1803c3089ee5da37b0a56eb9c2bdf9aeb4b2
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|fefea0a3279f850e562cfaaf4fe3b24af1dd3994
+
+# Configuration retained from the vendor repository
+product/etc/permissions/com.oneplus.gallery.xml|79f7d0d8596321cfe29734abf512e5d9981e61f5
+product/etc/sysconfig/oneplus-hiddenapi.xml|8a61fb729d726c72bae3cb57fc41709d586a616d
+vendor/etc/libese-nxp.conf|6d39903f41b7cca1b80aa5a08f6363c96c280d3a
