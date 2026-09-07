@@ -13,6 +13,7 @@ import android.hardware.camera2.CameraManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -27,7 +28,10 @@ public class CameraMotorService extends Service implements Handler.Callback {
     public static final int MSG_CAMERA_CLOSED = 1000;
     public static final int MSG_CAMERA_OPEN = 1001;
 
-    private Handler mHandler = new Handler(this);
+    private final Handler mHandler = new Handler(Looper.getMainLooper(), this);
+
+    private CameraManager mCameraManager;
+    private boolean mDestroyed;
 
     private long mClosedEvent;
     private long mOpenEvent;
@@ -38,7 +42,7 @@ public class CameraMotorService extends Service implements Handler.Callback {
                 public void onCameraAvailable(@NonNull String cameraId) {
                     super.onCameraAvailable(cameraId);
 
-                    if (cameraId.equals(FRONT_CAMERA_ID)) {
+                    if (!mDestroyed && cameraId.equals(FRONT_CAMERA_ID)) {
                         mClosedEvent = SystemClock.elapsedRealtime();
                         if (SystemClock.elapsedRealtime() - mOpenEvent < CAMERA_EVENT_DELAY_TIME
                                 && mHandler.hasMessages(MSG_CAMERA_OPEN)) {
@@ -53,7 +57,7 @@ public class CameraMotorService extends Service implements Handler.Callback {
                 public void onCameraUnavailable(@NonNull String cameraId) {
                     super.onCameraUnavailable(cameraId);
 
-                    if (cameraId.equals(FRONT_CAMERA_ID)) {
+                    if (!mDestroyed && cameraId.equals(FRONT_CAMERA_ID)) {
                         mOpenEvent = SystemClock.elapsedRealtime();
                         if (SystemClock.elapsedRealtime() - mClosedEvent < CAMERA_EVENT_DELAY_TIME
                                 && mHandler.hasMessages(MSG_CAMERA_CLOSED)) {
@@ -67,10 +71,11 @@ public class CameraMotorService extends Service implements Handler.Callback {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         CameraMotorController.calibrate();
 
-        CameraManager cameraManager = getSystemService(CameraManager.class);
-        cameraManager.registerAvailabilityCallback(mAvailabilityCallback, null);
+        mCameraManager = getSystemService(CameraManager.class);
+        mCameraManager.registerAvailabilityCallback(mAvailabilityCallback, mHandler);
     }
 
     @Override
@@ -82,6 +87,9 @@ public class CameraMotorService extends Service implements Handler.Callback {
     @Override
     public void onDestroy() {
         if (DEBUG) Log.d(TAG, "Destroying service");
+        mDestroyed = true;
+        mCameraManager.unregisterAvailabilityCallback(mAvailabilityCallback);
+        mHandler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
 
