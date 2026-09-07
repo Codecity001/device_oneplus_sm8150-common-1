@@ -7,9 +7,9 @@
          priority value should be unique. -->
 
     <integer name="a2dp_source_codec_priority_ldac">7001</integer>
-    <integer name="a2dp_source_codec_priority_aptx_adaptive">6001</integer>
     <integer name="a2dp_source_codec_priority_aptx_hd">5001</integer>
     <integer name="a2dp_source_codec_priority_aptx">4001</integer>
     <integer name="a2dp_source_codec_priority_aac">3001</integer>
+    <integer name="a2dp_source_codec_priority_opus">2501</integer>
     <integer name="a2dp_source_codec_priority_sbc">2001</integer>
 </resources>
