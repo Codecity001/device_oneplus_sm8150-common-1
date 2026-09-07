@@ -59,7 +59,6 @@
     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
     <integer-array name="config_availableColorModes" />
 
-
     <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
@@ -142,9 +141,6 @@
     <!-- Specifies the maximum burn-in offset vertically. -->
     <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
 
-    <!-- Mock Oplus LinearmotorVibratorService -->
-    <bool name="config_mockOplusLinearmotorVibratorService">true</bool>
-
     <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
 
@@ -156,10 +152,6 @@
 
     <!-- Feature flag to store TaskSnapshot in 16 bit pixel format to save memory. -->
     <bool name="config_use16BitTaskSnapshotPixelFormat">true</bool>
-
-    <!-- If not empty, sets the AVC codec profile level used for the internal screen recorder.
-         Possible values: 3, 3.1, 3.2, 4, 4.1, 4.2 -->
-    <string name="config_screenRecorderAVCProfileLevel" translatable="false">3.1</string>
 
     <!-- Enables or disables fading edges when marquee is enabled in TextView.
          Off by default, since the framebuffer readback used to implement the
