@@ -5,6 +5,7 @@
  */
 
 #include "AlsCorrection.h"
+#include "AlsConfigUtils.h"
 #include "CaptureWorker.h"
 
 #include <android-base/properties.h>
@@ -53,7 +54,7 @@ struct als_config {
     float max_brightness;
 };
 
-static struct {
+static const struct {
     float middle;
     float min, max;
 } hysteresis_ranges[] = {
@@ -83,6 +84,7 @@ static struct {
 };
 
 static als_config conf;
+static bool configValid = false;
 
 class AreaCaptureConnection {
     std::shared_ptr<IAreaCapture> service;
@@ -117,40 +119,53 @@ static T get(const std::string& path, const T& def) {
 }
 
 void AlsCorrection::init() {
-    std::istringstream is;
-
+    configValid = false;
+    conf = {};
     conf.hbr = GetBoolProperty("vendor.sensors.als_correction.hbr", false);
     conf.bias = GetIntProperty("vendor.sensors.als_correction.bias", 0);
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.rgbw_max_lux_div", ""));
-    is >> conf.rgbw_max_lux_div[0] >> conf.rgbw_max_lux_div[1]
-        >> conf.rgbw_max_lux_div[2] >> conf.rgbw_max_lux_div[3];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.rgbw_poly1", ""));
-    is >> conf.rgbw_poly[0][0] >> conf.rgbw_poly[0][1]
-        >> conf.rgbw_poly[0][2] >> conf.rgbw_poly[0][3];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.rgbw_poly2", ""));
-    is >> conf.rgbw_poly[1][0] >> conf.rgbw_poly[1][1]
-        >> conf.rgbw_poly[1][2] >> conf.rgbw_poly[1][3];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.rgbw_poly3", ""));
-    is >> conf.rgbw_poly[2][0] >> conf.rgbw_poly[2][1]
-        >> conf.rgbw_poly[2][2] >> conf.rgbw_poly[2][3];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.rgbw_poly4", ""));
-    is >> conf.rgbw_poly[3][0] >> conf.rgbw_poly[3][1]
-        >> conf.rgbw_poly[3][2] >> conf.rgbw_poly[3][3];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.grayscale_weights", ""));
-    is >> conf.grayscale_weights[0] >> conf.grayscale_weights[1] >> conf.grayscale_weights[2];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.sensor_gaincal_points", ""));
-    is >> conf.sensor_gaincal_points[0] >> conf.sensor_gaincal_points[1]
-        >> conf.sensor_gaincal_points[2] >> conf.sensor_gaincal_points[3];
-    is = std::istringstream(GetProperty("vendor.sensors.als_correction.sensor_inverse_gain", ""));
-    is >> conf.sensor_inverse_gain[0] >> conf.sensor_inverse_gain[1]
-        >> conf.sensor_inverse_gain[2] >> conf.sensor_inverse_gain[3];
+    const auto readValues = [](const char* suffix, auto& values) {
+        const std::string property = std::string("vendor.sensors.als_correction.") + suffix;
+        if (parseAlsValues(GetProperty(property, ""), values)) return true;
+        ALOGE("Invalid ALS configuration: %s", property.c_str());
+        return false;
+    };
+    if (!readValues("rgbw_max_lux_div", conf.rgbw_max_lux_div)
+            || !readValues("rgbw_poly1", conf.rgbw_poly[0])
+            || !readValues("rgbw_poly2", conf.rgbw_poly[1])
+            || !readValues("rgbw_poly3", conf.rgbw_poly[2])
+            || !readValues("rgbw_poly4", conf.rgbw_poly[3])
+            || !readValues("grayscale_weights", conf.grayscale_weights)
+            || !readValues("sensor_gaincal_points", conf.sensor_gaincal_points)
+            || !readValues("sensor_inverse_gain", conf.sensor_inverse_gain)) {
+        return;
+    }
+
+    conf.sensor_inverse_gain[0] = alsCalibrationOr(
+            get(ALS_CALI_DIR "row_coe", 0.0f) / 1000.0f, conf.sensor_inverse_gain[0]);
+
+    // Factory calibration takes precedence; the property is a per-channel fallback.
+    parseAlsValues(GetProperty("vendor.sensors.als_correction.rgbw_max_lux", ""),
+                   conf.rgbw_max_lux);
+    for (int i = 0; i < 4; ++i) {
+        conf.rgbw_max_lux[i] = alsCalibrationOr(
+                get(rgbw_max_lux_paths[i], 0.0f), conf.rgbw_max_lux[i]);
+        if (!positiveAlsValue(conf.rgbw_max_lux[i])
+                || !positiveAlsValue(conf.rgbw_max_lux_div[i])
+                || !positiveAlsValue(conf.sensor_inverse_gain[i])
+                || conf.sensor_gaincal_points[i] < 0.0f) {
+            ALOGE("Invalid ALS calibration for channel %d; correction disabled", i);
+            return;
+        }
+    }
+    for (float weight : conf.grayscale_weights) {
+        if (weight < 0.0f) {
+            ALOGE("Invalid ALS grayscale weight; correction disabled");
+            return;
+        }
+    }
 
     float rgbw_acc = 0.0;
     for (int i = 0; i < 4; i++) {
-        float max_lux = get(rgbw_max_lux_paths[i], 0.0);
-        if (max_lux != 0.0) {
-            conf.rgbw_max_lux[i] = max_lux;
-        }
         if (i < 3) {
             rgbw_acc += conf.rgbw_max_lux[i];
             conf.rgbw_lux_postmul[i] = conf.rgbw_max_lux[i] / conf.rgbw_max_lux_div[i];
@@ -158,31 +173,33 @@ void AlsCorrection::init() {
             rgbw_acc -= conf.rgbw_max_lux[i];
             conf.rgbw_lux_postmul[i] = rgbw_acc / conf.rgbw_max_lux_div[i];
         }
+        if (!std::isfinite(conf.rgbw_lux_postmul[i])) {
+            ALOGE("Invalid ALS display scale for channel %d; correction disabled", i);
+            return;
+        }
     }
     ALOGI("Display maximums: R=%.0f G=%.0f B=%.0f W=%.0f",
         conf.rgbw_max_lux[0], conf.rgbw_max_lux[1],
         conf.rgbw_max_lux[2], conf.rgbw_max_lux[3]);
 
-    float row_coe = get(ALS_CALI_DIR "row_coe", 0.0);
-    if (row_coe != 0.0) {
-        conf.sensor_inverse_gain[0] = row_coe / 1000.0;
-    }
     conf.agc_threshold = 800.0 / conf.sensor_inverse_gain[0];
 
-    float cali_coe = get(ALS_CALI_DIR "cali_coe", 0.0);
-    conf.calib_gain = cali_coe > 0.0 ? cali_coe / 1000.0 : 1.0;
+    conf.calib_gain = alsCalibrationOr(get(ALS_CALI_DIR "cali_coe", 0.0f) / 1000.0f, 1.0f);
+    if (!positiveAlsValue(conf.calib_gain * conf.sensor_inverse_gain[0])
+            || !positiveAlsValue(conf.agc_threshold)) {
+        ALOGE("Invalid ALS gain scale; correction disabled");
+        return;
+    }
     ALOGI("Calibrated sensor gain: %.2fx", 1.0 / (conf.calib_gain * conf.sensor_inverse_gain[0]));
 
-    conf.max_brightness = get(BRIGHTNESS_DIR "max_brightness", 1023.0);
-
-    for (auto& range : hysteresis_ranges) {
-        range.min /= conf.calib_gain * conf.sensor_inverse_gain[0];
-        range.max /= conf.calib_gain * conf.sensor_inverse_gain[0];
-    }
-    hysteresis_ranges[0].min = -1.0;
+    conf.max_brightness = alsCalibrationOr(
+            get(BRIGHTNESS_DIR "max_brightness", 1023.0f), 1023.0f);
+    configValid = true;
 }
 
 void AlsCorrection::process(Event& event) {
+    if (!configValid) return;
+
     static CaptureWorker captureWorker(AreaCaptureConnection{});
     AreaRgbCaptureResult screenshot{};
 
@@ -278,8 +295,10 @@ void AlsCorrection::process(Event& event) {
             state.last_agc_gain = agc_gain;
             for (auto& range : hysteresis_ranges) {
                 if (sensor_corrected <= range.middle) {
-                    state.hyst_min = range.min;
-                    state.hyst_max = range.max + brightness_fullwhite;
+                    state.hyst_min = range.middle == 0.0f ? -1.0f
+                            : range.min / (conf.calib_gain * conf.sensor_inverse_gain[0]);
+                    state.hyst_max = range.max / (conf.calib_gain * conf.sensor_inverse_gain[0])
+                            + brightness_fullwhite;
                     break;
                 }
             }
