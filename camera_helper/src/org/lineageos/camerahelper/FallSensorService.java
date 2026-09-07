@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.util.Log;
 
 public class FallSensorService extends Service {
@@ -36,6 +37,7 @@ public class FallSensorService extends Service {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         if (DEBUG) Log.d(TAG, "Creating service");
         mFallSensor = new FallSensor(this);
 
@@ -48,15 +50,19 @@ public class FallSensorService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (DEBUG) Log.d(TAG, "Starting service");
-        mFallSensor.enable();
+        if (getSystemService(PowerManager.class).isInteractive()) {
+            mFallSensor.enable();
+        } else {
+            mFallSensor.disable();
+        }
         return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         if (DEBUG) Log.d(TAG, "Destroying service");
-        mFallSensor.disable();
         unregisterReceiver(mScreenStateReceiver);
+        mFallSensor.close();
         super.onDestroy();
     }
 

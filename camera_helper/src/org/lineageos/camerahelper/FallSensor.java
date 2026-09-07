@@ -31,6 +31,9 @@ public class FallSensor implements SensorEventListener {
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
+    private boolean mClosed;
+    private AlertDialog mAlertDialog;
 
     public FallSensor(Context context) {
         mContext = context;
@@ -49,14 +52,14 @@ public class FallSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.values[0] <= 0) {
+        if (mClosed || event.values[0] <= 0) {
             return;
         }
 
         Log.d(TAG, "Fall detected, ensuring front camera is closed");
 
         // We shouldn't really bother doing anything if motor is already closed
-        if (CameraMotorController.getMotorPosition().equals(CameraMotorController.POSITION_DOWN)) {
+        if (CameraMotorController.POSITION_DOWN.equals(CameraMotorController.getMotorPosition())) {
             return;
         }
 
@@ -65,7 +68,9 @@ public class FallSensor implements SensorEventListener {
         CameraMotorController.setMotorEnabled();
 
         // Show alert dialog informing user that we closed the camera
-        new Handler(Looper.getMainLooper()).post(() -> {
+        mHandler.post(() -> {
+            if (mClosed) return;
+            if (mAlertDialog != null) mAlertDialog.dismiss();
             Context context = new ContextThemeWrapper(
                     mContext, R.style.Theme_SubSettingsBase_Expressive);
             AlertDialog alertDialog = new AlertDialog.Builder(context)
@@ -86,6 +91,7 @@ public class FallSensor implements SensorEventListener {
                     .create();
             alertDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
             alertDialog.setCanceledOnTouchOutside(false);
+            mAlertDialog = alertDialog;
             alertDialog.show();
         });
     }
@@ -96,16 +102,29 @@ public class FallSensor implements SensorEventListener {
     }
 
     void enable() {
+        if (mClosed || mSensor == null) return;
         if (DEBUG) Log.d(TAG, "Enabling");
         mExecutorService.submit(() -> {
-            mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_FASTEST);
+            mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_FASTEST, mHandler);
         });
     }
 
     void disable() {
+        if (mClosed || mSensor == null) return;
         if (DEBUG) Log.d(TAG, "Disabling");
         mExecutorService.submit(() -> {
             mSensorManager.unregisterListener(this, mSensor);
         });
+    }
+    void close() {
+        if (mClosed) return;
+        disable();
+        mClosed = true;
+        mExecutorService.shutdown();
+        mHandler.removeCallbacksAndMessages(null);
+        if (mAlertDialog != null) {
+            mAlertDialog.dismiss();
+            mAlertDialog = null;
+        }
     }
 }
