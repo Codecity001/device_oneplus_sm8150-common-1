@@ -1,8 +1,3 @@
 # App launch prefetching (IORapd)
 ro.iorapd.enable=false
 persist.device_config.runtime_native_boot.iorap_readahead_enable=false
-
-# Zram
-ro.zram.first_wb_delay_mins=1440
-ro.zram.mark_idle_delay_mins=60
-ro.zram.periodic_wb_delay_hours=24
