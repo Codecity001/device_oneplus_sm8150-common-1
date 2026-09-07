@@ -5,8 +5,3 @@ persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 # Camera
 libc.debug.malloc.program=android.hardware.camera.provider@2.4-service_64
 libc.debug.malloc.options=rear_guard=4096
-
-# Zram
-ro.zram.first_wb_delay_mins=1440
-ro.zram.mark_idle_delay_mins=60
-ro.zram.periodic_wb_delay_hours=24

@@ -94,8 +94,8 @@
         <item>0:2:15</item>
     </string-array>
 
-    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
-    <bool name="config_zramWriteback">true</bool>
+    <!-- No zram backing device is configured. -->
+    <bool name="config_zramWriteback">false</bool>
 
     <!-- Flag indicating whether the surfaceflinger has limited
          alpha compositing functionality in hardware.  If set, the window
