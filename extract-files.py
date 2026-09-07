@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from pathlib import Path
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -102,6 +104,17 @@ module = ExtractUtilsModule(
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
+
+
+def add_custom_modules(ctx, packages_ctx):
+    ctx.bp_out.write(Path(__file__).with_name('proprietary-files.bp.in').read_text())
+    ctx.product_mk_out.write(
+        '\nPRODUCT_PACKAGES += \\\n'
+        '    libaudiohal@6.0\n'
+    )
+
+
+module.proprietary_files[0].add_post_makefile_generation_fn(add_custom_modules)
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
