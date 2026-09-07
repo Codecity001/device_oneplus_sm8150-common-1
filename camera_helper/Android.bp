@@ -10,6 +10,8 @@ android_app {
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
 
+    required: ["OnePlusCameraHelperKeyHandler"],
+
     certificate: "platform",
     platform_apis: true,
     privileged: true,
