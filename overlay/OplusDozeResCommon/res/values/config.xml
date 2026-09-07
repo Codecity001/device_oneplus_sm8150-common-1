@@ -5,7 +5,7 @@
 -->
 <resources>
     <!-- Sensor types -->
-    <string name="pickup_sensor_type">android.sensor.tilt_detector</string>
+    <string name="pickup_sensor_type">android.sensor.pick_up_gesture</string>
 
     <!-- Sensor trigger values -->
     <item name="pickup_sensor_value" format="float" type="dimen">0.0</item>
