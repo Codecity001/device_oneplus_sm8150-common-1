@@ -5,6 +5,9 @@
 -->
 <resources>
 
+    <!-- The 4.14 F2FS driver does not implement GC_URGENT_MID or its pacing interface. -->
+    <bool name="config_supportsSmartIdleMaintenance">false</bool>
+
     <!-- Control whether the always on display mode is available. This should only be enabled on
          devices where the display has been tuned to be power efficient in DOZE and/or DOZE_SUSPEND
          states. -->
