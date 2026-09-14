@@ -316,6 +316,7 @@ PRODUCT_PACKAGES += \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
     OPlusSystemUIResCommon \
+    SimpleDeviceConfig \
     SimpleDeviceConfigCommon
 
 # Partitions
