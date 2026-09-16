@@ -217,6 +217,7 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.oplus.rc \
     init.oplus.sh \
+    init.oplus.hall.sh \
     init.power-menu-default.rc \
     init.power-menu-default.sh \
     init.qcom.early_boot.sh \
