@@ -2,6 +2,6 @@ service vendor.sensors-hal-2-1-oneplus_msmnile /vendor/bin/hw/android.hardware.s
     class hal
     user system
     group system wakelock context_hub input
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
     capabilities BLOCK_SUSPEND
     rlimit rtprio 10 10
