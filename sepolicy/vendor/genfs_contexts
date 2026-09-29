@@ -3,3 +3,6 @@ genfscon sysfs /class/motor    u:object_r:sysfs_motor:s0
 
 # WDSP (WCD9340 Codec DSP)
 genfscon sysfs /kernel/wdsp0 u:object_r:vendor_sysfs_audio:s0
+
+# Suspend progress tracing for the hwlog kmsg capture
+genfscon sysfs /power/pm_debug_messages u:object_r:sysfs_power:s0

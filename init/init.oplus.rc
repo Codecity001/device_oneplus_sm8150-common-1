@@ -92,6 +92,8 @@ on property:sys.boot_completed=1
     # Display
     copy /vendor/etc/Oppo_QC_LTM_Commercial_SM8250_2020_01_15.pfm /mnt/vendor/persist/data/pfm/licenses/1000-1000-no-exp-1186717196.pfm
     chown system system /mnt/vendor/persist/data/pfm/licenses/1000-1000-no-exp-1186717196.pfm
+    # Trace suspend progress into the kernel log for the hwlog capture
+    write /sys/power/pm_debug_messages 1
     start oplus-hwlog
 
 service oplus-sh /odm/bin/init.oplus.sh
@@ -119,7 +121,7 @@ service vl53l1_daemon_main /odm/bin/vl53l1_daemon_main
 
 # Persistent logcat capture for post-mortem debugging. On FBE the sdcard
 # view exists only after the first unlock, hence the boot_completed start.
-service oplus-hwlog /system/bin/sh -c "mkdir -p /sdcard/hwlog && exec logcat -b all -v threadtime -v year -f /sdcard/hwlog/log.txt -r 1024 -n 50"
+service oplus-hwlog /system/bin/sh -c "mkdir -p /sdcard/hwlog && logcat -b kernel -v threadtime -v year -f /sdcard/hwlog/kmsg.txt -r 1024 -n 50 & exec logcat -b all -v threadtime -v year -f /sdcard/hwlog/log.txt -r 1024 -n 50"
     class late_start
     user shell
     group shell log
