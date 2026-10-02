@@ -69,6 +69,18 @@ sh_binary {
     vendor: true,
 }
 
+sh_binary {
+    name: "umbra_audiofx.sh",
+    src: "umbra_audiofx.sh",
+}
+
+prebuilt_etc {
+    name: "init.umbra.rc",
+    src: "init.umbra.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
 prebuilt_etc {
     name: "init.power-menu-default.rc",
     src: "init.power-menu-default.rc",

@@ -21,3 +21,6 @@
 
 # Thermal HAL
 /vendor/bin/hw/android\.hardware\.thermal-service\.pixel                    u:object_r:hal_thermal_default_exec:s0
+
+# Umbra
+/data/vendor/umbra(/.*)?                                                    u:object_r:umbra_data_file:s0

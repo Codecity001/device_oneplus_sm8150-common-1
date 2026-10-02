@@ -1,2 +1,5 @@
 # Sensors
 /(system_ext|system/system_ext)/bin/hw/vendor\.lineage\.oplus_als.service    u:object_r:hal_lineage_oplus_als_aidl_exec:s0
+
+# Umbra
+/system/bin/umbra_audiofx\.sh    u:object_r:umbra_audiofx_exec:s0

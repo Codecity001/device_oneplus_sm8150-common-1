@@ -227,7 +227,9 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.target.power.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    init.umbra.rc \
+    ueventd.qcom.rc \
+    umbra_audiofx.sh
 
 # Input
 PRODUCT_COPY_FILES += \

@@ -1,0 +1,5 @@
+on post-fs-data
+    mkdir /data/vendor/umbra 0755 root root
+    restorecon /data/vendor/umbra
+    exec -- /system/bin/umbra_audiofx.sh
+    mount none /data/vendor/umbra/audio_effects.xml /vendor/etc/audio_effects.xml bind

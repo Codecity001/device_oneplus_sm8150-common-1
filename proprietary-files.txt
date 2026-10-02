@@ -1113,6 +1113,13 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
+# Umbra
+system/etc/permissions/privapp-permissions-com.shadov.umbra.xml|f7edbf384ddaf49ff6f5149f4a754844128b3ff9
+system/etc/sysconfig/config-com.shadov.umbra.xml|8d1ff5d34ef410fbfa05fe533108a9ae396ed4a9
+-system/priv-app/UmbraControl/UmbraControl.apk;PRESIGNED;SKIPAPKCHECKS|bfe803fa38694f1794ef7d1474c0beb4ef777a52
+-vendor/lib/soundfx/libumbra.so;DISABLE_CHECKELF|338a0e85c841de83477d77ae7ee013ddabdf4df6
+-vendor/lib64/soundfx/libumbra.so;DISABLE_CHECKELF|e864697f5b1f1138fa3b15ebddbf1926a27abc93
+
 # VPP
 odm/etc/tunings.txt
 odm/lib/vendor.oplus.hardware.orms@1.0.so

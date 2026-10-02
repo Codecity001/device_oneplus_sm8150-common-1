@@ -60,6 +60,9 @@
         <!--DTS:X Ultra-->
         <library name="dtsaudio" path="libdtsaudio.so"/>
         <!--DTS END-->
+        <!--Umbra-->
+        <library name="umbra" path="libumbra.so"/>
+        <!--UMBRA END-->
     </libraries>
     <effects>
         <effectProxy name="bassboost" library="proxy" uuid="14804144-a5ee-4d24-aa88-0002a5d5c51b">
@@ -128,6 +131,11 @@
         <!--DTS:X Ultra-->
         <effect name="dtsaudio" library="dtsaudio" uuid="146edfc0-7ed2-11e4-80eb-0002a5d5c51b"/>
         <!--DTS END-->
+        <!--Umbra-->
+        <effect name="umbra" library="umbra" uuid="5f0a5e82-4237-4a44-9aba-1c24237fc85d"/>
+        <effect name="umbra_ctrl" library="umbra" uuid="2fda1799-558d-4e54-83f5-ff63e5217222"/>
+        <effect name="umbra_global" library="umbra" uuid="7e21b9a6-cd48-4f37-a1e0-5b93d0c6e284"/>
+        <!--UMBRA END-->
     </effects>
     <postprocess>
         <stream type="voice_call">

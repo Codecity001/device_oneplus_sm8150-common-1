@@ -1,0 +1,16 @@
+# init runs umbra_audiofx.sh in its own domain and does the bind mount
+# itself: only init may mount over vendor files (domain.te neverallow).
+type umbra_audiofx, domain, coredomain;
+typeattribute umbra_audiofx data_between_core_and_vendor_violators;
+type umbra_audiofx_exec, exec_type, system_file_type, file_type;
+
+init_daemon_domain(umbra_audiofx)
+
+allow init vendor_configs_file:file mounton;
+
+allow umbra_audiofx umbra_audiofx_exec:file rx_file_perms;
+allow umbra_audiofx shell_exec:file rx_file_perms;
+allow umbra_audiofx toolbox_exec:file rx_file_perms;
+
+allow umbra_audiofx umbra_data_file:dir rw_dir_perms;
+allow umbra_audiofx umbra_data_file:file create_file_perms;
