@@ -1,5 +1,6 @@
 service vendor.sensors-hal-2-1-oneplus_msmnile /vendor/bin/hw/android.hardware.sensors@2.1-service.oneplus_msmnile
     class hal
+    interface android.hardware.sensors@2.1::ISensors default
     user system
     group system wakelock context_hub input
     task_profiles ServiceCapacityLow
