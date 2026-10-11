@@ -1,5 +1,6 @@
 dontaudit hal_audio_default default_prop:file r_file_perms;
 dontaudit hal_audio_default vendor_diag_device:chr_file rw_file_perms;
+dontaudit hal_audio_default priv_app_36:fifo_file write;
 
 # DTS:X Ultra
 get_prop(hal_audio_default, vendor_dts_prop)
