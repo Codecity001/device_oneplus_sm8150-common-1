@@ -623,6 +623,18 @@ vendor/etc/init/dtsaudio.rc|8942aec1eea5085495f1ea7afbafd448b3b31468
 -vendor/lib64/libdts-eagle-shared.so|71a77ae104e9d085393a7e9a10fdbfa61fb8b07e
 -vendor/lib64/libdtsdsec.so|c5349e096929afcfec4259435ef9bd284dd0722a
 
+# Face unlock
+my_product/non_overlay/priv-app/OPFaceUnlock/OPFaceUnlock.apk:vendor/etc/faceunlock/resources.zip
+odm/vendor/firmware_mnt/faceapp.b00:vendor/etc/faceunlock/faceapp.b00
+odm/vendor/firmware_mnt/faceapp.b01:vendor/etc/faceunlock/faceapp.b01
+odm/vendor/firmware_mnt/faceapp.b02:vendor/etc/faceunlock/faceapp.b02
+odm/vendor/firmware_mnt/faceapp.b03:vendor/etc/faceunlock/faceapp.b03
+odm/vendor/firmware_mnt/faceapp.b04:vendor/etc/faceunlock/faceapp.b04
+odm/vendor/firmware_mnt/faceapp.b05:vendor/etc/faceunlock/faceapp.b05
+odm/vendor/firmware_mnt/faceapp.b06:vendor/etc/faceunlock/faceapp.b06
+odm/vendor/firmware_mnt/faceapp.b07:vendor/etc/faceunlock/faceapp.b07
+odm/vendor/firmware_mnt/faceapp.mdt:vendor/etc/faceunlock/faceapp.mdt
+
 # Fingerprint
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service
 odm/bin/init.oplus.fingerprints.sh

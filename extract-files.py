@@ -145,6 +145,8 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/IWlanService-null-credentials.patch'),
     'vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service': blob_fixup()
         .add_needed('libstagefright_foundation-v33.so'),
+    'vendor/etc/faceunlock/resources.zip': blob_fixup()
+        .patch_file('blob-patches/OPFaceUnlock.py'),
     'vendor/etc/init/vendor.qti.adsprpc-service.rc': blob_fixup()
         .patch_file('blob-patches/vendor.qti.adsprpc-service.rc.patch'),
     'vendor/etc/init/vendor.qti.cdsprpc-service.rc': blob_fixup()
