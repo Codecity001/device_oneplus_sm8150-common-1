@@ -4,7 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import tempfile
+from functools import partial
+from os import path
 from pathlib import Path
+from zipfile import ZipFile
 
 from extract_utils.fixups_blob import (
     blob_fixup,
@@ -18,6 +22,12 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
+from extract_utils.tools import (
+    apktool_path,
+    build_tools_dir,
+    java_path,
+)
+from extract_utils.utils import run_cmd
 
 namespace_imports = [
     'device/oneplus/sm8150-common',
@@ -45,6 +55,58 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_vendor_suffix,
 }
 
+
+def replace_patched_dex(
+    patch: str, ctx, file, file_path: str, *args, tmp_dir: str, **kwargs
+):
+    # Swap only the reassembled dex into the original APK: apktool_pack()
+    # would drop its v1 signature and the page alignment of its stored
+    # native libraries.
+    with open(path.join(ctx.module_dir, patch)) as f:
+        smali_dirs = {
+            line[len('+++ b/') :].split('/', 1)[0]
+            for line in f
+            if line.startswith('+++ b/')
+        }
+    dex_files = [
+        'classes.dex' if d == 'smali' else d.removeprefix('smali_') + '.dex'
+        for d in sorted(smali_dirs)
+    ]
+
+    run_cmd([java_path, '-jar', apktool_path, 'b', '--no-apk', tmp_dir])
+    built_dir = path.join(tmp_dir, 'build', 'apk')
+    dex_args = ['-C', built_dir]
+    for dex in dex_files:
+        dex_args += ['-f', path.join(built_dir, dex)]
+
+    entries = [info.filename for info in ZipFile(file_path).infolist()]
+    # zip2zip takes each name as a glob or an in:out mapping.
+    assert not any(set(name) & set('*?[]{}\\:') for name in entries)
+
+    soong_zip, merge_zips, zip2zip, zipalign = (
+        path.join(build_tools_dir, tool)
+        for tool in ('soong_zip', 'merge_zips', 'zip2zip', 'zipalign')
+    )
+    with tempfile.TemporaryDirectory() as work_dir:
+        dex_zip = path.join(work_dir, 'dex.zip')
+        merged = path.join(work_dir, 'merged.zip')
+        ordered = path.join(work_dir, 'ordered.zip')
+
+        run_cmd([soong_zip, '-o', dex_zip, '-L', '0'] + dex_args)
+        run_cmd([merge_zips, '-ignore-duplicates', merged, dex_zip, file_path])
+        run_cmd([zip2zip, '-t', '-i', merged, '-o', ordered] + entries)
+        run_cmd([zipalign, '-f', '-p', '4', ordered, file_path])
+
+
+def apktool_patch_dex(patch: str) -> blob_fixup:
+    return (
+        blob_fixup()
+        .apktool_unpack(patch)
+        .patch_dir(patch)
+        .call(partial(replace_patched_dex, patch))
+    )
+
+
 blob_fixups: blob_fixups_user_type = {
     'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service': blob_fixup()
         .add_needed('libshims_fingerprint.oplus.so'),
@@ -64,6 +126,7 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/PowerOffAlarm.patch'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
+    'product/priv-app/OnePlusCamera/OnePlusCamera.apk': apktool_patch_dex('blob-patches/OnePlusCamera.patch'),
     'system/framework/WfdCommon.jar': blob_fixup()
         .apktool_patch('blob-patches/WfdCommon.patch'),
     'system_ext/framework/oplus-ims-ext.jar': blob_fixup()

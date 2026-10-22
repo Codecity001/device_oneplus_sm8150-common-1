@@ -1,0 +1,110 @@
+--- a/smali/com/oneplus/camera/CameraApplication.smali
++++ b/smali/com/oneplus/camera/CameraApplication.smali
+@@ -157,9 +157,7 @@
+     .line 21
+     const-class v0, Lcom/oneplus/camera/KickStartService;
+
+-    invoke-direct {p0, v0}, Lcom/oneplus/camera/CameraApplication;->checkServiceRunningStatus(Ljava/lang/Class;)Z
+-
+-    move-result v0
++    const/4 v0, 0x1
+
+     if-nez v0, :cond_0
+
+--- a/smali/com/oneplus/camera/features/SM8150FeaturesKt.smali
++++ b/smali/com/oneplus/camera/features/SM8150FeaturesKt.smali
+@@ -271,7 +271,7 @@
+ 
+     const-string v3, "OPNormalCamcorder.SessionType4k30fps"
+ 
+-    const v6, 0x8116
++    const v6, 0x8113
+ 
+     .line 41
+     invoke-virtual {v0, v3, v6}, Lcom/oneplus/camera/features/FeatureInitializer;->set(Ljava/lang/String;I)V
+@@ -347,15 +347,6 @@
+     .line 54
+     invoke-virtual {v0, v3, v5}, Lcom/oneplus/camera/features/FeatureInitializer;->set(Ljava/lang/String;Z)V
+ 
+-    const-string v3, ""
+-
+-    .line 55
+-    check-cast v3, Ljava/lang/CharSequence;
+-
+-    const-string v6, "SlowMotionCaptureMode.TargetResolutions.120FPS"
+-
+-    invoke-virtual {v0, v6, v3}, Lcom/oneplus/camera/features/FeatureInitializer;->set(Ljava/lang/String;Ljava/lang/CharSequence;)V
+-
+     const-string v3, "1920x1080"
+ 
+     .line 56
+--- a/smali/com/oneplus/camera/hardware/camera2/wrappers/OPNormalCamcorderImpl.smali
++++ b/smali/com/oneplus/camera/hardware/camera2/wrappers/OPNormalCamcorderImpl.smali
+@@ -2929,7 +2929,7 @@
+     .locals 0
+ 
+     .line 359
+-    iget-boolean p0, p0, Lcom/oneplus/camera/hardware/camera2/wrappers/OPNormalCamcorderImpl;->isPreviewFrameCallbackSupported:Z
++    const/4 p0, 0x0
+ 
+     return p0
+ .end method
+@@ -4875,20 +4875,14 @@
+ 
+     const/16 v7, 0x780
+ 
+-    if-ne v0, v7, :cond_a
+-
+     invoke-virtual {v5}, Landroid/util/Size;->getHeight()I
+ 
+     move-result v0
+ 
+     const/16 v5, 0x438
+ 
+-    if-ne v0, v5, :cond_a
+-
+     const/16 v0, 0x1e
+ 
+-    if-ne v6, v0, :cond_a
+-
+     invoke-direct/range {p0 .. p0}, Lcom/oneplus/camera/hardware/camera2/wrappers/OPNormalCamcorderImpl;->getHisCamera()Lcom/oneplus/camera/next/hardware/HyperImageStabilizationCamera;
+ 
+     move-result-object v0
+@@ -4899,8 +4893,6 @@
+ 
+     move-result v0
+ 
+-    if-eq v0, v9, :cond_a
+-
+     :cond_9
+     iget-object v0, v1, Lcom/oneplus/camera/hardware/camera2/wrappers/OPNormalCamcorderImpl;->disablePreviewFrameCallbackHandle:Lcom/oneplus/base/Handle;
+ 
+--- a/smali_classes2/com/oneplus/camera/ui/ThumbnailIconImpl.smali
++++ b/smali_classes2/com/oneplus/camera/ui/ThumbnailIconImpl.smali
+@@ -457,7 +457,7 @@
+ # The value of this static final field might be set in the static constructor
+ .field private static final LOCK_SCREEN_URI_ALLIES1:Ljava/lang/String; = "content://com.open.gallery.smart.provider/locked_pictures"
+ 
+-.field private static final MAX_GALLERY_SHARED_ELEMENT_THUMB_SIZE:J = 0xc8000L
++.field private static final MAX_GALLERY_SHARED_ELEMENT_THUMB_SIZE:J = 0x30d40L
+ 
+ .field private static final METHOD_IS_IN_PASSED_LIST:Ljava/lang/String; = "is_in_passed_list"
+ 
+@@ -7660,7 +7660,7 @@
+     :goto_7
+     const/16 v11, 0x1e
+ 
+-    const-wide/32 v12, 0xc8000
++    const-wide/32 v12, 0x30d40
+ 
+     if-lt v0, v11, :cond_f
+ 
+@@ -8228,7 +8228,7 @@
+     :goto_2
+     const/16 v1, 0x1e
+ 
+-    const-wide/32 v5, 0xc8000
++    const-wide/32 v5, 0x30d40
+ 
+     if-lt v3, v1, :cond_8
+ 
