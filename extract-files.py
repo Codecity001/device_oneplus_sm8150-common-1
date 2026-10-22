@@ -90,6 +90,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('NXP_NFC_DEV_NODE="/dev/pn553"', 'NXP_NFC_DEV_NODE="/dev/nq-nci"')
         .regex_replace('(NXPLOG_.*_LOGLEVEL)=0x03', '\\1=0x02')
         .regex_replace('NFC_DEBUG_ENABLED=0x01', 'NFC_DEBUG_ENABLED=0x00'),
+    'vendor/etc/seccomp_policy/wfdhdcphalservice.policy': blob_fixup()
+        .add_line_if_missing('gettid: 1'),
     'vendor/etc/wfdconfig.xml': blob_fixup()
         .regex_replace('<AudioStreamInSuspend>0</AudioStreamInSuspend>', '<AudioStreamInSuspend>1</AudioStreamInSuspend>')
         .regex_replace('<HID>0</HID>', '<HID>1</HID>'),
