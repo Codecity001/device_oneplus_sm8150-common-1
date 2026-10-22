@@ -80,9 +80,9 @@ on boot
 
 #USB OTG switch
 on property:persist.sys.oem.otg_support=true
-    write /sys/class/power_supply/usb/otg_switch 1
+    write /sys/class/oplus_chg/usb/otg_switch 1
 on property:persist.sys.oem.otg_support=false
-    write /sys/class/power_supply/usb/otg_switch 0
+    write /sys/class/oplus_chg/usb/otg_switch 0
 
 on property:ro.boot.prjname=*
     # Display
