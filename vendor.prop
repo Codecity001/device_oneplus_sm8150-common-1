@@ -16,9 +16,6 @@ persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.voicecall.speaker.stereo=true
 ro.vendor.audio.sdk.fluencetype=none
 ro.vendor.audio.sdk.ssr=false
-vendor.audio_hal.in_period_size=144
-vendor.audio_hal.period_multiplier=3
-vendor.audio_hal.period_size=192
 vendor.audio.adm.buffering.ms=2
 vendor.audio.enable.mirrorlink=false
 vendor.audio.feature.a2dp_offload.enable=true
@@ -38,8 +35,8 @@ vendor.audio.feature.dsm_feedback.enable=false
 vendor.audio.feature.dynamic_ecns.enable=true
 vendor.audio.feature.ext_hw_plugin.enable=false
 vendor.audio.feature.external_dsp.enable=false
-vendor.audio.feature.external_speaker_tfa.enable=false
 vendor.audio.feature.external_speaker.enable=false
+vendor.audio.feature.external_speaker_tfa.enable=false
 vendor.audio.feature.fluence.enable=true
 vendor.audio.feature.fm.enable=true
 vendor.audio.feature.hdmi_edid.enable=true
@@ -58,9 +55,9 @@ vendor.audio.feature.snd_mon.enable=true
 vendor.audio.feature.spkr_prot.enable=true
 vendor.audio.feature.src_trkn.enable=true
 vendor.audio.feature.ssrec.enable=true
+vendor.audio.feature.usb_offload.enable=true
 vendor.audio.feature.usb_offload_burst_mode.enable=true
 vendor.audio.feature.usb_offload_sidetone_volume.enable=false
-vendor.audio.feature.usb_offload.enable=true
 vendor.audio.feature.vbat.enable=true
 vendor.audio.feature.wsa.enable=false
 vendor.audio.flac.sw.decoder.24bit=true
@@ -79,6 +76,9 @@ vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
+vendor.audio_hal.in_period_size=144
+vendor.audio_hal.period_multiplier=3
+vendor.audio_hal.period_size=192
 vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
@@ -170,10 +170,15 @@ ro.vendor.bluetooth.wipower=false
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Crypto
-ro.crypto.volume.filenames_mode=aes-256-cts
 ro.crypto.allow_encrypt_override=true
+ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
+ro.surface_flinger.enable_frame_rate_override=false
+ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+ro.vendor.display.ad=1
+ro.vendor.display.sensortype=2
 vendor.display.comp_mask=0
 vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
 vendor.display.disable_decimation=1
@@ -186,35 +191,30 @@ vendor.display.enable_allow_idle_fallback=1
 vendor.display.enable_default_color_mode=1
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
-ro.vendor.display.ad=1
-ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
-ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
-ro.vendor.display.sensortype=2
 vendor.gralloc.disable_ubwc=0
-ro.surface_flinger.enable_frame_rate_override=false
 
 # Dolby
 ro.vendor.dolby.dax.version=DAX3_3.7.0.8_r1
-vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
 
 # Dolby & Audio
 ro.audio.monitorRotation=true
 ro.vendor.audio.dolby.dax.support=true
 ro.vendor.audio.dolby.surround.enable=true
 
-# Dolby Spatial Audio
-ro.audio.spatializer_enabled=true
-ro.audio.headtracking_enabled=false
-ro.audio.spatializer_transaural_enabled_default=false
-ro.audio.stereo_spatialization_enabled=true
-persist.vendor.audio.spatializer.speaker_enabled=false
-audio.spatializer.effect.util_clamp_min=300
-
 # Dolby Codec2
 vendor.audio.c2.preferred=true
-vendor.qc2audio.suspend.enabled=true
 vendor.qc2audio.per_frame.flac.dec.enabled=true
+vendor.qc2audio.suspend.enabled=true
+
+# Dolby Spatial Audio
+audio.spatializer.effect.util_clamp_min=300
+persist.vendor.audio.spatializer.speaker_enabled=false
+ro.audio.headtracking_enabled=false
+ro.audio.spatializer_enabled=true
+ro.audio.spatializer_transaural_enabled_default=false
+ro.audio.stereo_spatialization_enabled=true
 
 # DPM
 persist.vendor.dpmhalservice.enable=1
@@ -241,10 +241,10 @@ debug.egl.hw=0
 debug.graphics.game_default_frame_rate.disabled=true
 debug.sf.enable_adpf_cpu_hint=true
 debug.sf.enable_egl_image_tracker=0
+debug.sf.enable_gl_backpressure=0
 debug.sf.enable_transaction_tracing=false
 debug.sf.hw=0
 debug.sf.latch_unsignaled=0
-debug.sf.enable_gl_backpressure=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 persist.sys.sf.color_saturation=1.0
@@ -262,8 +262,8 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # HWUI
-debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
+debug.hwui.use_hint_manager=true
 
 # Incremental FS
 ro.incremental.enable=yes
@@ -308,8 +308,8 @@ persist.vendor.radio.sib16_support=1
 ro.telephony.default_network=22,22
 
 # ScrollOptimizer
-persist.sys.perf.scroll_opt=true
 persist.sys.perf.scroll_opt.heavy_app=1
+persist.sys.perf.scroll_opt=true
 
 # Sensors
 persist.sys.assert.panic=false
@@ -328,4 +328,3 @@ vendor.usb.use_gadget_hal=1
 
 # Zygote
 zygote.critical_window.minute=10
-
