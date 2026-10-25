@@ -253,7 +253,7 @@ vendor/lib64/vendor.qti.hardware.cvp@1.0.so|21f029015fd0718c8488131696cc239866de
 
 # Camera - OnePlus Camera APKs - from OnePlus7-user-12-SKQ1.211113.001-P.202303230244-release-keys
 -product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so;EXTRACT_ONLY|4659105d1ca963ddfab1560e21009107b8cc520d
--product/priv-app/OnePlusCamera/OnePlusCamera.apk;EXTRACT_ONLY|3324acd1a2ab243a70aea1c0721af2b490d9bfa8|8c1fa42dc4773f488cbf9c65e5f912065e76e889
+-product/priv-app/OnePlusCamera/OnePlusCamera.apk;EXTRACT_ONLY|3324acd1a2ab243a70aea1c0721af2b490d9bfa8|4bb5aa003b6d4cc0e86952273daf08ec7797cf4a
 -product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper@2.0.so;EXTRACT_ONLY|e8a5f418d0f2eda9dea23cd6e8fdc80219360371
 -product/priv-app/OnePlusCameraService/OnePlusCameraService.apk|88c1fc5e5c88540b2fb92e363eefbc824de53edb
 -product/priv-app/OnePlusGallery/OnePlusGallery.apk;EXTRACT_ONLY|549647d21209b3756d4da5827de1ca1b41f3c49b

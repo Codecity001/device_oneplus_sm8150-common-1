@@ -59,25 +59,33 @@ lib_fixups: lib_fixups_user_type = {
 def replace_patched_dex(
     patch: str, ctx, file, file_path: str, *args, tmp_dir: str, **kwargs
 ):
-    # Swap only the reassembled dex into the original APK: apktool_pack()
-    # would drop its v1 signature and the page alignment of its stored
-    # native libraries.
+    # Swap only the reassembled dex and manifest into the original APK:
+    # apktool_pack() would drop its v1 signature and the page alignment
+    # of its stored native libraries.
     with open(path.join(ctx.module_dir, patch)) as f:
-        smali_dirs = {
-            line[len('+++ b/') :].split('/', 1)[0]
+        patched_targets = {
+            line[len('+++ b/') :].strip()
             for line in f
             if line.startswith('+++ b/')
         }
+    smali_dirs = {
+        target.split('/', 1)[0]
+        for target in patched_targets
+        if target.startswith('smali')
+    }
     dex_files = [
         'classes.dex' if d == 'smali' else d.removeprefix('smali_') + '.dex'
         for d in sorted(smali_dirs)
     ]
+    has_manifest = any(target == 'AndroidManifest.xml' for target in patched_targets)
 
     run_cmd([java_path, '-jar', apktool_path, 'b', '--no-apk', tmp_dir])
     built_dir = path.join(tmp_dir, 'build', 'apk')
-    dex_args = ['-C', built_dir]
+    zip_args = ['-C', built_dir]
     for dex in dex_files:
-        dex_args += ['-f', path.join(built_dir, dex)]
+        zip_args += ['-f', path.join(built_dir, dex)]
+    if has_manifest:
+        zip_args += ['-f', path.join(built_dir, 'AndroidManifest.xml')]
 
     entries = [info.filename for info in ZipFile(file_path).infolist()]
     # zip2zip takes each name as a glob or an in:out mapping.
@@ -88,12 +96,12 @@ def replace_patched_dex(
         for tool in ('soong_zip', 'merge_zips', 'zip2zip', 'zipalign')
     )
     with tempfile.TemporaryDirectory() as work_dir:
-        dex_zip = path.join(work_dir, 'dex.zip')
+        patch_zip = path.join(work_dir, 'patch.zip')
         merged = path.join(work_dir, 'merged.zip')
         ordered = path.join(work_dir, 'ordered.zip')
 
-        run_cmd([soong_zip, '-o', dex_zip, '-L', '0'] + dex_args)
-        run_cmd([merge_zips, '-ignore-duplicates', merged, dex_zip, file_path])
+        run_cmd([soong_zip, '-o', patch_zip, '-L', '0'] + zip_args)
+        run_cmd([merge_zips, '-ignore-duplicates', merged, patch_zip, file_path])
         run_cmd([zip2zip, '-t', '-i', merged, '-o', ordered] + entries)
         run_cmd([zipalign, '-f', '-p', '4', ordered, file_path])
 

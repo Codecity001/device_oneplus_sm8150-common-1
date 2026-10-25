@@ -5,7 +5,7 @@ android_app_import {
     name: "OnePlusCamera",
     owner: "oneplus",
     apk: "proprietary/product/priv-app/OnePlusCamera/OnePlusCamera.apk",
-    presigned: true,
+    certificate: "platform",
     dex_preopt: {
         enabled: false,
     },
